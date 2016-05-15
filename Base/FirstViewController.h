@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (strong, nonatomic) NSDictionary *dictOfDataToPass;
+
+@property (weak, nonatomic) IBOutlet UITableView *feedTableView;
+
+
+- (IBAction)addPost:(id)sender;
 
 @end
 

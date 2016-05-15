@@ -14,6 +14,16 @@
 
 @implementation AppDelegate
 
+#warning - Layout of app for generic use cases - See comments
+
+/* Upon user sign up, the app will ask if the user wants to create or join a base. Depending on what TYPE of base the user creates/joins,
+ * the app will load the interface for that type. 
+ *
+ *     (e.g. EMS Base will have options for responding to calls, where a standard group Base will instead have options to create/join 
+ *      events)
+ *
+ *
+**/
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
