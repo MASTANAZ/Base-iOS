@@ -105,6 +105,7 @@
 // Store profile images
 - (void)saveImage:(UIImage*)image filename:(NSString*)filename
 {
+#warning Make this method able to overwrite existing image for users instead of just saving to a new file.
     filename = [NSHomeDirectory() stringByAppendingFormat:@"/Documents/%@", filename];
     NSData *data = UIImagePNGRepresentation(image);
     [data writeToFile:filename atomically:YES];

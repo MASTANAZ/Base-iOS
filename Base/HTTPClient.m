@@ -11,7 +11,8 @@
 @implementation HTTPClient
 
 
-+ (void)performGETrequestWithURL:(NSString*)urlString completionBlock:(void (^)(BOOL, NSData *, NSError *))completionBlock
++ (void)performGETrequestWithURL:(NSString*)urlString
+                 completionBlock:(void (^)(BOOL, NSData *, NSError *))completionBlock
 {
     
     // Execute all of the GET requests here;

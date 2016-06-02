@@ -388,8 +388,6 @@
 				6E0B8CCC1C57F9D6003C13E0 /* External Libraries */,
 				6E0B8C5F1C52C35F003C13E0 /* AppDelegate.h */,
 				6E0B8C601C52C35F003C13E0 /* AppDelegate.m */,
-				F21531F21CC947CB00AB3A3B /* UITextField+EmailValidation.h */,
-				F21531F31CC947CB00AB3A3B /* UITextField+EmailValidation.m */,
 				6E0B8DC71C594F5A003C13E0 /* View */,
 				6E0B8DC01C593B41003C13E0 /* API */,
 				6E0B8DCB1C5973C2003C13E0 /* Model */,
@@ -706,8 +704,8 @@
 		6E0B8DC01C593B41003C13E0 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				F2A562E71C6A2468000A6686 /* Map API */,
 				6E0B8DBF1C593B28003C13E0 /* HTTP */,
+				F2A562E71C6A2468000A6686 /* Map API */,
 				6E0B8DB81C593A9C003C13E0 /* Feed API */,
 				F2152F1D1CDE53D800F1EC88 /* User Defaults API */,
 			);
@@ -763,6 +761,8 @@
 			children = (
 				F2152F151CDAB48400F1EC88 /* ImageManipulator.h */,
 				F2152F161CDAB48400F1EC88 /* ImageManipulator.m */,
+				F21531F21CC947CB00AB3A3B /* UITextField+EmailValidation.h */,
+				F21531F31CC947CB00AB3A3B /* UITextField+EmailValidation.m */,
 			);
 			name = "Custom Categories";
 			sourceTree = "<group>";

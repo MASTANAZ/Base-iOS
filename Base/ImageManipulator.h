@@ -10,9 +10,9 @@
 
 @interface UIImage (Color)
 
-+ (UIImage*)setBackgroundImageByColor:(UIColor *)backgroundColor withFrame:(CGRect )rect;
++ (UIImage *)setBackgroundImageByColor:(UIColor *)backgroundColor withFrame:(CGRect )rect;
 
-+ (UIImage*) replaceColor:(UIColor*)color inImage:(UIImage*)image withTolerance:(float)tolerance;
++ (UIImage *)replaceColor:(UIColor*)color inImage:(UIImage*)image withTolerance:(float)tolerance;
 
 + (UIImage *)changeWhiteColorTransparent: (UIImage *)image;
 
@@ -23,7 +23,7 @@
 
 + (UIImage *)negativeImageWithImage:(UIImage*)sourceImage;
 
-+ (UIImage*) drawText:(NSString*) text
++ (UIImage *) drawText:(NSString*) text
               inImage:(UIImage*)  image
               atPoint:(CGPoint)   point
             withColor:(UIColor*)  color;
