@@ -104,6 +104,7 @@
                 // If the image can't be downloaded
                 if (imageView.image == nil) {
                     NSLog(@"Image is stil Nil");
+#warning Replace this image here with a "Could not be downloaded" image.
                     imageView.image = [UIImage imageNamed:@"fire.png"];
                 }
                 

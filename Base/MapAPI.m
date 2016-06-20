@@ -43,7 +43,10 @@
         
         isOnline = NO;
         
-                [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(downloadMapObjects:) name:@"DownloadMapObjectsNotification" object:nil];
+                [[NSNotificationCenter defaultCenter] addObserver:self
+                                                         selector:@selector(downloadMapObjects:)
+                                                             name:@"DownloadMapObjectsNotification"
+                                                           object:nil];
     }
     
     

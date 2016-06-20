@@ -10,6 +10,9 @@
 
 @interface FeedProfileImageView : UIView
 
-- (id)initWithFrame:(CGRect)frame profileImageURL:(NSString *)profileImageURL forCell:(UITableViewCell*)cell atIndex:(NSInteger)index;
+- (id)initWithFrame:(CGRect)frame
+    profileImageURL:(NSString *)profileImageURL
+            forCell:(UITableViewCell*)cell
+            atIndex:(NSInteger)index;
 
 @end

@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "RSKImageCropper.h"
 
-@interface AccountSettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, RSKImageCropViewControllerDelegate> {
+@interface AccountSettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, RSKImageCropViewControllerDelegate>
+{
     UIImagePickerController *imagePickerController;
     UIPopoverController *popover;
 }

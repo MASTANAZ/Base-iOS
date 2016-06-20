@@ -20,7 +20,7 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 
-// Non-generically Typed Properties
+
 @property (nonatomic, copy) NSNumber *annotationsDataIndex;
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coordinate;
