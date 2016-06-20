@@ -6,6 +6,25 @@
 //  Copyright © 2016 Kudoko, LLC. All rights reserved.
 //
 
+/* NSError Codes for UserDefaults domain
+ 
+ -100 to -199: Error retrieving Defaults/ data for Defaults.
+ --------------------------------------------------------------------------
+ -100: Unable to get keys for Defaults
+ 
+ 
+ -200 to -299: Error setting object for Defaults key
+ --------------------------------------------------------------------------
+ -200: Attempt to write Object to defaults that is not of valid object type
+ -201: Attempt to add duplicate object for specified Key in defaults
+ -202: Failed to add new Object-Key pair to Defautls
+ -203: Unable to save First Name to User Defaults
+ -204: Unable to save Last Name to User Defaults
+ -205: Unable to save Base Name to User Defaults
+ -206: Unable to save Profile Image to User Defaults
+ 
+ */
+
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 

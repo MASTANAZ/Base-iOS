@@ -770,9 +770,9 @@
 		F2152F1D1CDE53D800F1EC88 /* User Defaults API */ = {
 			isa = PBXGroup;
 			children = (
+				F2152F1C1CDE536500F1EC88 /* BaseUserDefaultsConstants.h */,
 				F2152F191CDAB82400F1EC88 /* NSUserDefaultsAPI.h */,
 				F2152F1A1CDAB82400F1EC88 /* NSUserDefaultsAPI.m */,
-				F2152F1C1CDE536500F1EC88 /* BaseUserDefaultsConstants.h */,
 			);
 			name = "User Defaults API";
 			sourceTree = "<group>";
