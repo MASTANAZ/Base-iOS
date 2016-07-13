@@ -10,7 +10,7 @@
 
 
 
-// Put the user defaults data structure/format here.
+//********* Put the user defaults data structure/format here.
 
 
 /* NSError Codes for UserDefaults domain

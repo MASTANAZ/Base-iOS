@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#warning Update this class to the updated code from the Git server.
+
 @interface UITextField (Email)
 
 + (BOOL)checkIfEmailIsValid:(NSString*)email;

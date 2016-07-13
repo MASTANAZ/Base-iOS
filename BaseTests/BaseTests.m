@@ -8,7 +8,10 @@
 
 #import <XCTest/XCTest.h>
 
-@interface BaseTests : XCTestCase
+// HTTP GET Request
+#import "HTTP_GETRequestOperation.h"
+
+@interface BaseTests : XCTestCase <HTTP_GETRequestOperationDelegate>
 
 @end
 
@@ -27,6 +30,37 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+}
+
+
+/**
+ Testing for HTTP GET Request Execution & Delegate Response
+ */
+
+- (void)testHTTP_GETRequestExecution {
+    HTTP_GETRequestOperation *getOperation = [[HTTP_GETRequestOperation alloc]init];
+    
+    [getOperation start];
+    
+    if ([getOperation isExecuting]) {
+        //No teardown needed
+        NSLog(@"HTTP GET Request Operation is executing.");
+    }
+    
+    else {
+        XCTAssert(NO, @"HTTP GET Request Operation is failing to execut.");
+    }
+}
+
+/**
+ Delegate method for HTTP Get Request
+ */
+- (void)receivedDataFromGETresponse:(NSData *)data withErrors:(NSArray *)arrayOfErrors{
+    NSLog(@"Delegate");
+    
+    if (arrayOfErrors != nil) {
+        XCTAssert(NO, @"HTTP Response error");
+    }
 }
 
 - (void)testPerformanceExample {

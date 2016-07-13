@@ -6,6 +6,8 @@
 //  Copyright © 2016 Kudoko, LLC. All rights reserved.
 //
 
+#warning Add this to the Git server as a separate class to be re-used in other applications.
+
 /* NSError Codes for UserDefaults domain
  
  -100 to -199: Error retrieving Defaults/ data for Defaults.

@@ -111,6 +111,8 @@
 		F2D18F8A1C6C3DFF007206B9 /* BaseMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D18F891C6C3DFF007206B9 /* BaseMapAnnotation.m */; };
 		F2D18F8E1C72613D007206B9 /* Base-MapAnnotation-Fire-2 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D18F8D1C72613D007206B9 /* Base-MapAnnotation-Fire-2 copy.png */; };
 		F2D18F931C72635A007206B9 /* Base-MapAnnotation-EmergencyMedical-2 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D18F921C72635A007206B9 /* Base-MapAnnotation-EmergencyMedical-2 copy.png */; };
+		F7C87CA11D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C87CA01D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m */; };
+		F7C87CA41D2D998300EE3B45 /* HTTP_GETRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C87CA31D2D998300EE3B45 /* HTTP_GETRequestOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -331,6 +333,10 @@
 		F2D18F891C6C3DFF007206B9 /* BaseMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMapAnnotation.m; sourceTree = SOURCE_ROOT; };
 		F2D18F8D1C72613D007206B9 /* Base-MapAnnotation-Fire-2 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Base-MapAnnotation-Fire-2 copy.png"; sourceTree = "<group>"; };
 		F2D18F921C72635A007206B9 /* Base-MapAnnotation-EmergencyMedical-2 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Base-MapAnnotation-EmergencyMedical-2 copy.png"; sourceTree = "<group>"; };
+		F7C87C9F1D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+GenerateBackgroundQueue.h"; sourceTree = "<group>"; };
+		F7C87CA01D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+GenerateBackgroundQueue.m"; sourceTree = "<group>"; };
+		F7C87CA21D2D998300EE3B45 /* HTTP_GETRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTP_GETRequestOperation.h; sourceTree = "<group>"; };
+		F7C87CA31D2D998300EE3B45 /* HTTP_GETRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTP_GETRequestOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -697,6 +703,7 @@
 			children = (
 				6E0B8DBC1C593B22003C13E0 /* HTTPClient.h */,
 				6E0B8DBD1C593B22003C13E0 /* HTTPClient.m */,
+				F7C87CA51D2D9C0A00EE3B45 /* HTTP Operation */,
 			);
 			name = HTTP;
 			sourceTree = "<group>";
@@ -934,6 +941,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F7C87CA51D2D9C0A00EE3B45 /* HTTP Operation */ = {
+			isa = PBXGroup;
+			children = (
+				F7C87CA61D2D9C1900EE3B45 /* Queue */,
+				F7C87CA21D2D998300EE3B45 /* HTTP_GETRequestOperation.h */,
+				F7C87CA31D2D998300EE3B45 /* HTTP_GETRequestOperation.m */,
+			);
+			name = "HTTP Operation";
+			sourceTree = "<group>";
+		};
+		F7C87CA61D2D9C1900EE3B45 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				F7C87C9F1D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.h */,
+				F7C87CA01D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m */,
+			);
+			name = Queue;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1075,6 +1101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E0B8D811C58166D003C13E0 /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
+				F7C87CA41D2D998300EE3B45 /* HTTP_GETRequestOperation.m in Sources */,
 				6E0B8D791C58166D003C13E0 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
 				6E0B8DBE1C593B22003C13E0 /* HTTPClient.m in Sources */,
 				6E0B8D661C58166D003C13E0 /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
@@ -1161,6 +1188,7 @@
 				F2152F121CDAAFC100F1EC88 /* UIApplication+RSKImageCropper.m in Sources */,
 				6E0B8D691C58166D003C13E0 /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
 				F21531DF1CC92B6500AB3A3B /* AccountSettingsViewController.m in Sources */,
+				F7C87CA11D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

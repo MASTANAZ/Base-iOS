@@ -134,7 +134,7 @@
 
 
 
-+(UIImage *)changeColorTo:(NSMutableArray*) array Transparent: (UIImage *)image
++ (UIImage *)changeColorTo:(NSMutableArray*) array Transparent: (UIImage *)image
 {
     CGImageRef rawImageRef=image.CGImage;
     
