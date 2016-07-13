@@ -38,7 +38,7 @@
 /**
  Testing for HTTP GET Request Execution & Delegate Response
  */
-
+#warning this implementation of the API is broken. Delegate wont respond.
 - (void)testHTTP_GETRequestExecution {
     HTTP_GETRequestOperation *getOperation = [[HTTP_GETRequestOperation alloc]init];
     getOperation.delegate = self;

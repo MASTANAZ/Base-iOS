@@ -90,7 +90,7 @@
     dispatch_group_t getRequestGroup = dispatch_group_create();
     dispatch_group_enter(getRequestGroup);
     
-//    [getRequestQueue addOperationWithBlock:^{
+    [getRequestQueue addOperationWithBlock:^{
     
         [getRequestSession dataTaskWithRequest:[NSURLRequest requestWithURL:serverURL]
                              completionHandler:^(NSData * _Nullable data,
@@ -138,7 +138,7 @@
 //             executing = NO;
 //             finished = YES;
          }];
-//    }];
+    }];
 
 
     [self didChangeValueForKey:@"isExecuting"];
