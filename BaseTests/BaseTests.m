@@ -11,7 +11,9 @@
 // HTTP GET Request
 #import "HTTP_GETRequestOperation.h"
 
-@interface BaseTests : XCTestCase <HTTP_GETRequestOperationDelegate>
+@interface BaseTests : XCTestCase <HTTP_GETRequestOperationDelegate> {
+    XCTestExpectation *serverRespondExpectation;
+}
 
 @end
 
@@ -39,8 +41,16 @@
 
 - (void)testHTTP_GETRequestExecution {
     HTTP_GETRequestOperation *getOperation = [[HTTP_GETRequestOperation alloc]init];
-    
+    getOperation.delegate = self;
+
     [getOperation start];
+    
+    serverRespondExpectation = [self expectationWithDescription:@"server responded"];
+    [self waitForExpectationsWithTimeout:10 handler:^(NSError * _Nullable error) {
+        if (error) {
+            XCTAssert(NO, @"Error in request delegate?");
+        }
+    }];
     
     if ([getOperation isExecuting]) {
         //No teardown needed
@@ -57,6 +67,7 @@
  */
 - (void)receivedDataFromGETresponse:(NSData *)data withErrors:(NSArray *)arrayOfErrors{
     NSLog(@"Delegate");
+    [serverRespondExpectation fulfill];
     
     if (arrayOfErrors != nil) {
         XCTAssert(NO, @"HTTP Response error");

@@ -71,8 +71,8 @@
 - (void)completeGETRequest {
     NSLog(@"Completing GET Request!");
     
-    [self willChangeValueForKey:@"isFinished"];
-    [self willChangeValueForKey:@"isExecuting"];
+//    [self willChangeValueForKey:@"isFinished"];
+//    [self willChangeValueForKey:@"isExecuting"];
     
     
     // 1) Create URL
@@ -83,14 +83,14 @@
     NSOperationQueue *getRequestQueue = [NSOperationQueue createBackgroundQueueForRequests];
     
     // 3) Create Session
-    NSURLSession *getRequestSession = [[NSURLSession alloc] init];
+    NSURLSession *getRequestSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     
     // 4) Perform data task in backgroun Queue
     
-//    dispatch_group_t getRequestGroup = dispatch_group_create();
-//    dispatch_group_enter(getRequestGroup);
+    dispatch_group_t getRequestGroup = dispatch_group_create();
+    dispatch_group_enter(getRequestGroup);
     
-    [getRequestQueue addOperationWithBlock:^{
+//    [getRequestQueue addOperationWithBlock:^{
     
         [getRequestSession dataTaskWithRequest:[NSURLRequest requestWithURL:serverURL]
                              completionHandler:^(NSData * _Nullable data,
@@ -124,15 +124,21 @@
                                                      withErrors:nil];
                  }
                  
-//                 dispatch_group_leave(getRequestGroup);
+                 dispatch_group_leave(getRequestGroup);
              }
              
              
-             
-             executing = NO;
-             finished = YES;
+            dispatch_group_notify(getRequestGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                [self willChangeValueForKey:@"isFinished"];
+                [self willChangeValueForKey:@"isExecuting"];
+                
+                executing = NO;
+                finished = YES;
+            });
+//             executing = NO;
+//             finished = YES;
          }];
-    }];
+//    }];
 
 
     [self didChangeValueForKey:@"isExecuting"];
