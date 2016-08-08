@@ -818,6 +818,7 @@
                         <segue destination="egg-MC-7KX" kind="show" identifier="FAQsegue" id="B1Q-Bf-RXa"/>
                         <segue destination="6ZI-Sh-FyA" kind="show" identifier="NotificationSettingsSegue" id="pyi-nl-MZv"/>
                         <segue destination="A0a-IT-ggc" kind="show" identifier="AccountSettingsSegue" id="Fbt-AA-3qJ"/>
+                        <segue destination="9ER-b0-Nls" kind="showDetail" identifier="LogoutSegue" id="7Oe-VK-b5h"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2S-C3-0jH" userLabel="First Responder" sceneMemberID="firstResponder"/>

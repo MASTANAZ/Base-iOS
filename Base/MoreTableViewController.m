@@ -20,8 +20,8 @@ NSDictionary *optionsDict;
     [super viewDidLoad];
     
     optionsDict = [[NSDictionary alloc]initWithObjects:@[
-                                                         @[@"Account Settings", @"Notification Settings", @"FAQ", @"Log Out"],
-                                                         @[@"Change Station, Password, Profile Name", @"Change when you receive notifications", @"Frequently Asked Questions", @"Log out of the application"]]
+                                                         @[@"Account Settings", @"Notification Settings", @"FAQ", @"Donate to the Developers", @"Log Out"],
+                                                         @[@"Change Station, Password, Profile Name", @"Change when you receive notifications", @"Frequently Asked Questions", @"Donate to help allow updates for Base.", @"Log out of the application"]]
                                                forKeys: @[@"Title", @"Detail"]];
     
     self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
@@ -50,11 +50,9 @@ NSDictionary *optionsDict;
     cell.detailTextLabel.text = [[optionsDict objectForKey:@"Detail"] objectAtIndex:indexPath.row];
     
     // Logout
-    if (indexPath.row == 3) {
+    if ([cell.textLabel.text isEqualToString:@"Log Out"]) {
         cell.textLabel.textColor = [UIColor redColor];
     }
-    
-    // Configure the cell...
     
     return cell;
 }
@@ -82,6 +80,8 @@ NSDictionary *optionsDict;
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Log Out" message:@"Once you log out, the application will not automatically sign you in  until you reenter your credentials." preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *logOutAction = [UIAlertAction actionWithTitle:@"Log Out" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
             // Log out of the application here;
+            
+            [self performSegueWithIdentifier:@"LogoutSegue" sender:self];
         }];
         
         UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -90,6 +90,40 @@ NSDictionary *optionsDict;
         }];
         
         [alertController addAction:logOutAction];
+        [alertController addAction:defaultAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+    
+    else if ([cell.textLabel.text isEqualToString:@"Donate to the Developers"]) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Continue to Safari?" message:@"To donate, you will be taken to Base's dontation site in the Safari application on your phone. Would you like to continue to Safari?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *safariButton = [UIAlertAction actionWithTitle:@"Open Safari" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            // Open safari website here;
+            
+            NSURL *url = [NSURL URLWithString:@"http://www.google.com"];
+            
+            if (![[UIApplication sharedApplication] openURL:url]) {
+                NSLog(@"%@%@",@"Failed to open url:",[url description]);
+                
+                UIAlertController *openFailedAlert = [UIAlertController alertControllerWithTitle:@"Failed to Open URL" message:@"Failed to open URL." preferredStyle:UIAlertControllerStyleAlert];
+
+                UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    // Log out of the application here;
+                    [self.tableView deselectRowAtIndexPath:[tableView indexPathForCell:cell] animated:YES];
+                }];
+                
+                [openFailedAlert addAction:defaultAction];
+                
+                [self presentViewController:alertController animated:YES completion:nil];
+            }
+        }];
+        
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            // Log out of the application here;
+            [self.tableView deselectRowAtIndexPath:[tableView indexPathForCell:cell] animated:YES];
+        }];
+        
+        [alertController addAction:safariButton];
         [alertController addAction:defaultAction];
         
         [self presentViewController:alertController animated:YES completion:nil];
