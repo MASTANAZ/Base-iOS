@@ -11,6 +11,8 @@
 // HTTP GET Request
 #import "HTTP_GETRequestOperation.h"
 
+#import "HTTPClient.h"
+
 @interface BaseTests : XCTestCase <HTTP_GETRequestOperationDelegate> {
     XCTestExpectation *serverRespondExpectation;
 }

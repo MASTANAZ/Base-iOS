@@ -1,16 +1,17 @@
 //
-//  HTTP_GETRequestOperation.m
+//  HTTP_POSTRequestOperation.m
 //  Base
 //
-//  Created by Blake Nazario on 7/6/16.
+//  Created by Blake Nazario on 8/8/16.
 //  Copyright © 2016 Kudoko, LLC. All rights reserved.
 //
 
-#import "HTTP_GETRequestOperation.h"
+#import "HTTP_POSTRequestOperation.h"
 
-@implementation HTTP_GETRequestOperation
+@implementation HTTP_POSTRequestOperation
 
 - (id)init {
+    
     self = [super init];
     if (self) {
         executing = NO;
@@ -36,43 +37,40 @@
 
 - (void)main {
     @try {
-        // Do main work of the operation here
+        // Do the main work of the operation here
         
-        // Complete the GET request
-        [self completeGETRequest];
+        [self completePOSTRequest];
     }
     
-    @catch(NSException *exception) {
-        // Do not rethrow exceptions.
+    @catch (NSException *exception) {
+        // Do not rethrow exceptions
     }
 }
 
 - (void)start {
     // Always check for cancellation before launching the task.
-    if ([self isCancelled])
-    {
-        // Must move the operation to the finished state if it is canceled.
+    if ([self isCancelled]) {
+        // Must move operation to the finished state if it is cancelled
         [self willChangeValueForKey:@"isFinished"];
         finished = YES;
         [self didChangeValueForKey:@"isFinished"];
         return;
     }
     
-    // If the operation is not canceled, begin executing the task.
-    [self willChangeValueForKey:@"isExecuting"];
+    // If th eoperation is not cancelled, begin executing the task
+    [self willChangeValueForKey:@"isFinished"];
     [NSThread detachNewThreadSelector:@selector(main) toTarget:self withObject:nil];
     executing = YES;
     [self didChangeValueForKey:@"isExecuting"];
 }
 
-
 #pragma mark - Custom Methods
 
-- (void)completeGETRequest {
+- (void)completePOSTRequest {
     NSLog(@"Completing GET Request!");
     
-//    [self willChangeValueForKey:@"isFinished"];
-//    [self willChangeValueForKey:@"isExecuting"];
+    //    [self willChangeValueForKey:@"isFinished"];
+    //    [self willChangeValueForKey:@"isExecuting"];
     
     // 1) Create URL
     NSURL *serverURL = [NSURL URLWithString:@"http://jsonplaceholder.typicode.com/posts/1"];    // serverAddress];
@@ -90,7 +88,7 @@
     dispatch_group_enter(getRequestGroup);
     
     [getRequestQueue addOperationWithBlock:^{
-    
+        
         [getRequestSession dataTaskWithRequest:[NSURLRequest requestWithURL:serverURL]
                              completionHandler:^(NSData * _Nullable data,
                                                  NSURLResponse * _Nullable response,
@@ -100,9 +98,9 @@
              if (error )
              {
                  // Return Data here,
-                 if (self.delegate && [self.delegate respondsToSelector:@selector(receivedDataFromGETresponse:withErrors:)])
+                 if (self.delegate && [self.delegate respondsToSelector:@selector(receivedDataFromPOSTresponse:withErrors:)])
                  {
-                     [self.delegate receivedDataFromGETresponse:data
+                     [self.delegate receivedDataFromPOSTresponse:data
                                                      withErrors:@[[NSError errorWithDomain:@"HTTPGetRequestError"
                                                                                       code: error.code
                                                                                   userInfo:@{NSLocalizedDescriptionKey:error.description,
@@ -117,9 +115,9 @@
              // No errors executing the request
              else {
                  // Return Data here,
-                 if (self.delegate && [self.delegate respondsToSelector:@selector(receivedDataFromGETresponse:withErrors:)])
+                 if (self.delegate && [self.delegate respondsToSelector:@selector(receivedDataFromPOSTresponse:withErrors:)])
                  {
-                     [self.delegate receivedDataFromGETresponse:data
+                     [self.delegate receivedDataFromPOSTresponse:data
                                                      withErrors:nil];
                  }
                  
@@ -127,22 +125,21 @@
              }
              
              
-            dispatch_group_notify(getRequestGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                [self willChangeValueForKey:@"isFinished"];
-                [self willChangeValueForKey:@"isExecuting"];
-                
-                executing = NO;
-                finished = YES;
-            });
-//             executing = NO;
-//             finished = YES;
+             dispatch_group_notify(getRequestGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                 [self willChangeValueForKey:@"isFinished"];
+                 [self willChangeValueForKey:@"isExecuting"];
+                 
+                 executing = NO;
+                 finished = YES;
+             });
+             //             executing = NO;
+             //             finished = YES;
          }];
     }];
-
-
+    
+    
     [self didChangeValueForKey:@"isExecuting"];
     [self didChangeValueForKey:@"isFinished"];
 }
-
 
 @end

@@ -18,6 +18,7 @@
 // The HTTP_GETRequest Operation
 #import "HTTP_GETRequestOperation.h"
 
+// Protocol for HTTP_GETRequestOperation delegate methods
 @protocol HTTP_GETRequestOperationDelegate;
 
 typedef void (^CompleteGETRequest)(BOOL success, NSData *responseData, NSError *error);

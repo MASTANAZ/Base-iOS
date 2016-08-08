@@ -18,12 +18,12 @@
 
 /**
  The function that is called within the operation to complete the request.
- */
+ **/
 - (void)completeGETRequest;
 
 /**
  The HTTP GET request delegate
- */
+ **/
 @property (nonatomic, weak) id<HTTP_GETRequestOperationDelegate> delegate;
 
 @end
@@ -32,7 +32,7 @@
 
 /** 
  HTTP_GETRequestOperationDelegate
- */
+ **/
  @protocol HTTP_GETRequestOperationDelegate <NSObject>
 
 @required

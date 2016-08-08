@@ -24,15 +24,31 @@
     NSInteger numberOfDaysForDateRange;
 }
 
-// Gets initial posts for the past date range
+/**
+ Gets initial posts for the past date range
+ **/
 - (NSArray*)getPosts;
 
 // This will be called by the Feed to simply retrieve the next posts; the Feed
 // will not have to specify the date range for posts; this API will manage that.
 - (NSArray*)getPostsForNextDateRange;
 
+/**
+ Saves the image to the /Documents/~filename~ directory.
+ 
+ @param filename The filename that the image will be saved as.
+ 
+ @warning `filename` must not be `nil`.
+ **/
 - (void)saveImage:(UIImage*)image filename:(NSString*)filename;
 
+/**
+ Retrieves image from the /Documents/~filename~ directory.
+ 
+ @param filename The filename of the image to be retreived.
+ 
+ @warning `filename` must not be `nil`.
+ **/
 - (UIImage*)getImage:(NSString*)filename;
 
 @end

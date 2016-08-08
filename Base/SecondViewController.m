@@ -48,8 +48,6 @@
  3) Allow adding of POIs by holding and dragging (similar to dropping pin in Maps app)
  ---3a) When user adds POI, they should have the option to share it with others. (e.g. POI becomes stored on database,
         not just their device.)
- 
- 
 */
 
 
@@ -386,7 +384,7 @@ int indexForTappedAnnotationCallout;
 
 
 #pragma mark - DROPDOWN VIEW
-
+#warning All of the dropdown view and associated table view logic need to be moved to another class.
 - (void)showDropDownView
 {
     // Init dropdown view

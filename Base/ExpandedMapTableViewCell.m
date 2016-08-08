@@ -59,11 +59,18 @@
     if ([_respondButton.titleLabel.text isEqualToString:@"Respond"]) {
         
         [UIView animateWithDuration:.3 animations:^{
-            [_respondButton setTitleColor:[UIColor colorWithRed:0.0018 green:0.7632 blue:0.0073 alpha:1.0] forState:UIControlStateNormal];
-            [_respondButton setTitle:@"Responding..." forState:UIControlStateNormal];
+//            [_respondButton setTitleColor:[UIColor colorWithRed:0.0018 green:0.7632 blue:0.0073 alpha:1.0] forState:UIControlStateNormal];
+//            [_respondButton setTitle:@"Responding..." forState:UIControlStateNormal];
+            [_respondButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            [_respondButton setTitle:@"Cancel Response..." forState:UIControlStateNormal];
+            
             [UIView commitAnimations];
+        } completion:^(BOOL finished)
+         {
+             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Responding" message:@"Confirm that you are responding to this call. A notification will be sent to all other members of your station" delegate:self cancelButtonTitle:@"Nevermind" otherButtonTitles:@"Confirm", nil];
+             [alert show];
         }];
-        
+
     }
     
     else {
@@ -71,6 +78,9 @@
             [_respondButton setTitleColor:[UIColor colorWithRed:0.0392 green:0.3765 blue:0.9961 alpha:1.0] forState:UIControlStateNormal];
             [_respondButton setTitle:@"Respond" forState:UIControlStateNormal];
             [UIView commitAnimations];
+        } completion:^(BOOL finished) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Cancel Response" message:@"Confirm that you are cancelling your response to this call. A notification will be sent to all other members of your station" delegate:self cancelButtonTitle:@"Nevermind" otherButtonTitles:@"Cancel Response", nil];
+            [alert show];
         }];
 
     }

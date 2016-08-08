@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+//TODO: Add specific queuing functionality to justify separate class
+
 @interface NSOperationQueue (BackgroundQueue)
 
 /**

@@ -12,7 +12,9 @@
 
 + (FeedAPI*)sharedInstance;
 
-// Gets initial posts for the past date range
+/**
+ Gets initial posts for the past date range
+ **/
 - (NSArray*)getPosts;
 
 // This will be called by the Feed to simply retrieve the next posts; the Feed

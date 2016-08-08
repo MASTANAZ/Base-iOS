@@ -7,7 +7,7 @@
 //
 
 #import "MapPersistencyManager.h"
-
+#import "HTTPClient.h"
 
 @interface MapPersistencyManager () {
     
@@ -42,6 +42,17 @@
 }
 
 - (NSArray*)getMapObjects {
+    
+    // Interface with the HTTP client here.
+    
+    [HTTPClient performGETrequestWithURL:@"url with parameter for current posts"
+                         completionBlock:^(BOOL success, NSData *responseData, NSError *error)
+     {
+         // decrypt the data
+         
+         // get array of posts
+     }];
+    
     return mapObjects;
 }
 

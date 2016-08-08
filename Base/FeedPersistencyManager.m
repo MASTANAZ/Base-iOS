@@ -24,6 +24,7 @@
     if (self) {
         
         // Call the methods here to get the data; (e.g. self.getPosts;
+        // posts = [self getPosts];
         
         // Dummy list of posts
         posts = [NSMutableArray arrayWithArray:
@@ -83,7 +84,8 @@
         NSLog(@"*** Feed persistence manager:Inserting TEXT post at index: %i", index);
         [posts insertObject:textPost atIndex:index];
     }
-    else{
+    
+    else {
         NSLog(@"*** Feed persistence manager:Inserting TEXT post at end of posts array");
         [posts addObject:textPost];
     }
@@ -95,7 +97,7 @@
         NSLog(@"*** Feed persistence manager:Inserting MAP post at index: %i", index);
         [posts insertObject:mapPost atIndex:index];
     }
-    else{
+    else {
         NSLog(@"*** Feed persistence manager:Inserting MAP post at end of posts array");
         [posts addObject:mapPost];
     }

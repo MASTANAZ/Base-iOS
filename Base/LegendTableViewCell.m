@@ -8,6 +8,7 @@
 
 #import "LegendTableViewCell.h"
 
+
 @implementation LegendTableViewCell
 
 @synthesize textLabel;

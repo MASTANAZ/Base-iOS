@@ -111,6 +111,8 @@
 		F2D18F8A1C6C3DFF007206B9 /* BaseMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D18F891C6C3DFF007206B9 /* BaseMapAnnotation.m */; };
 		F2D18F8E1C72613D007206B9 /* Base-MapAnnotation-Fire-2 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D18F8D1C72613D007206B9 /* Base-MapAnnotation-Fire-2 copy.png */; };
 		F2D18F931C72635A007206B9 /* Base-MapAnnotation-EmergencyMedical-2 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D18F921C72635A007206B9 /* Base-MapAnnotation-EmergencyMedical-2 copy.png */; };
+		F7960D0B1D494D1600A25F71 /* SelectedLegendItems.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D0A1D494D1600A25F71 /* SelectedLegendItems.m */; };
+		F7960D121D5920B900A25F71 /* HTTP_POSTRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D111D5920B900A25F71 /* HTTP_POSTRequestOperation.m */; };
 		F7C87CA11D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C87CA01D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m */; };
 		F7C87CA41D2D998300EE3B45 /* HTTP_GETRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C87CA31D2D998300EE3B45 /* HTTP_GETRequestOperation.m */; };
 /* End PBXBuildFile section */
@@ -333,6 +335,10 @@
 		F2D18F891C6C3DFF007206B9 /* BaseMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMapAnnotation.m; sourceTree = SOURCE_ROOT; };
 		F2D18F8D1C72613D007206B9 /* Base-MapAnnotation-Fire-2 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Base-MapAnnotation-Fire-2 copy.png"; sourceTree = "<group>"; };
 		F2D18F921C72635A007206B9 /* Base-MapAnnotation-EmergencyMedical-2 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Base-MapAnnotation-EmergencyMedical-2 copy.png"; sourceTree = "<group>"; };
+		F7960D091D494D1600A25F71 /* SelectedLegendItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedLegendItems.h; sourceTree = "<group>"; };
+		F7960D0A1D494D1600A25F71 /* SelectedLegendItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedLegendItems.m; sourceTree = "<group>"; };
+		F7960D101D5920B900A25F71 /* HTTP_POSTRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTP_POSTRequestOperation.h; sourceTree = "<group>"; };
+		F7960D111D5920B900A25F71 /* HTTP_POSTRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTP_POSTRequestOperation.m; sourceTree = "<group>"; };
 		F7C87C9F1D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+GenerateBackgroundQueue.h"; sourceTree = "<group>"; };
 		F7C87CA01D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+GenerateBackgroundQueue.m"; sourceTree = "<group>"; };
 		F7C87CA21D2D998300EE3B45 /* HTTP_GETRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTP_GETRequestOperation.h; sourceTree = "<group>"; };
@@ -456,10 +462,7 @@
 			children = (
 				6E0B8C651C52C35F003C13E0 /* SecondViewController.h */,
 				6E0B8C661C52C35F003C13E0 /* SecondViewController.m */,
-				6E0B8CCF1C580C03003C13E0 /* LegendTableViewCell.h */,
-				6E0B8CD01C580C03003C13E0 /* LegendTableViewCell.m */,
-				F2152EFA1CD7ACCA00F1EC88 /* MapListTableViewController.h */,
-				F2152EFB1CD7ACCA00F1EC88 /* MapListTableViewController.m */,
+				F7960D0C1D494D1B00A25F71 /* Legend */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -941,12 +944,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F7960D0C1D494D1B00A25F71 /* Legend */ = {
+			isa = PBXGroup;
+			children = (
+				F2152EFA1CD7ACCA00F1EC88 /* MapListTableViewController.h */,
+				F2152EFB1CD7ACCA00F1EC88 /* MapListTableViewController.m */,
+				6E0B8CCF1C580C03003C13E0 /* LegendTableViewCell.h */,
+				6E0B8CD01C580C03003C13E0 /* LegendTableViewCell.m */,
+				F7960D091D494D1600A25F71 /* SelectedLegendItems.h */,
+				F7960D0A1D494D1600A25F71 /* SelectedLegendItems.m */,
+			);
+			name = Legend;
+			sourceTree = "<group>";
+		};
+		F7960D131D5920CA00A25F71 /* GET */ = {
+			isa = PBXGroup;
+			children = (
+				F7C87CA21D2D998300EE3B45 /* HTTP_GETRequestOperation.h */,
+				F7C87CA31D2D998300EE3B45 /* HTTP_GETRequestOperation.m */,
+			);
+			name = GET;
+			sourceTree = "<group>";
+		};
+		F7960D141D5920D900A25F71 /* POST */ = {
+			isa = PBXGroup;
+			children = (
+				F7960D101D5920B900A25F71 /* HTTP_POSTRequestOperation.h */,
+				F7960D111D5920B900A25F71 /* HTTP_POSTRequestOperation.m */,
+			);
+			name = POST;
+			sourceTree = "<group>";
+		};
 		F7C87CA51D2D9C0A00EE3B45 /* HTTP Operation */ = {
 			isa = PBXGroup;
 			children = (
 				F7C87CA61D2D9C1900EE3B45 /* Queue */,
-				F7C87CA21D2D998300EE3B45 /* HTTP_GETRequestOperation.h */,
-				F7C87CA31D2D998300EE3B45 /* HTTP_GETRequestOperation.m */,
+				F7960D131D5920CA00A25F71 /* GET */,
+				F7960D141D5920D900A25F71 /* POST */,
 			);
 			name = "HTTP Operation";
 			sourceTree = "<group>";
@@ -1149,6 +1183,7 @@
 				F21531E91CC9418200AB3A3B /* CreateAccountViewController.m in Sources */,
 				6E0B8CD11C580C03003C13E0 /* LegendTableViewCell.m in Sources */,
 				6E0B8D771C58166D003C13E0 /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
+				F7960D121D5920B900A25F71 /* HTTP_POSTRequestOperation.m in Sources */,
 				F2A562FB1C6A2496000A6686 /* M_PreviousCallModel+M_PreviousCall_TableRepresentation.m in Sources */,
 				F2152F0E1CDAAFC100F1EC88 /* RSKImageCropViewController.m in Sources */,
 				6E0B8D631C58166D003C13E0 /* DGActivityIndicatorBallBeatAnimation.m in Sources */,
@@ -1178,6 +1213,7 @@
 				6E0B8D6C1C58166D003C13E0 /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
 				6E0B8DB71C5936B5003C13E0 /* MapPostModel+TableRepresentation.m in Sources */,
 				6E0B8D6B1C58166D003C13E0 /* DGActivityIndicatorBallRotateAnimation.m in Sources */,
+				F7960D0B1D494D1600A25F71 /* SelectedLegendItems.m in Sources */,
 				6E0B8CB31C569F0A003C13E0 /* InfoTableViewCell.m in Sources */,
 				F2152F101CDAAFC100F1EC88 /* RSKInternalUtility.m in Sources */,
 				6E0B8D7A1C58166D003C13E0 /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
