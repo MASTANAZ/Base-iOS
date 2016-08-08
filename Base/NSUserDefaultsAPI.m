@@ -352,6 +352,14 @@
     }
 }
 
+- (void)removeAllUserDefaults {
+    NSDictionary * defaultsDict = [userDefaults dictionaryRepresentation];
+    for (id key in defaultsDict) {
+        [userDefaults removeObjectForKey:key];
+    }
+}
+
+
 #pragma mark - Helper Methods
 
 - (BOOL)objectForDefaultsKeyIsValid:(id)object {

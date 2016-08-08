@@ -113,6 +113,9 @@
 		F2D18F931C72635A007206B9 /* Base-MapAnnotation-EmergencyMedical-2 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D18F921C72635A007206B9 /* Base-MapAnnotation-EmergencyMedical-2 copy.png */; };
 		F7960D0B1D494D1600A25F71 /* SelectedLegendItems.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D0A1D494D1600A25F71 /* SelectedLegendItems.m */; };
 		F7960D121D5920B900A25F71 /* HTTP_POSTRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D111D5920B900A25F71 /* HTTP_POSTRequestOperation.m */; };
+		F7960D171D5929BF00A25F71 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D161D5929BF00A25F71 /* KeychainItemWrapper.m */; };
+		F7960D1B1D592A9200A25F71 /* UserAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D1A1D592A9200A25F71 /* UserAPI.m */; };
+		F7960D1F1D592EC700A25F71 /* KeychainAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D1E1D592EC700A25F71 /* KeychainAPI.m */; };
 		F7C87CA11D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C87CA01D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m */; };
 		F7C87CA41D2D998300EE3B45 /* HTTP_GETRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C87CA31D2D998300EE3B45 /* HTTP_GETRequestOperation.m */; };
 /* End PBXBuildFile section */
@@ -339,6 +342,12 @@
 		F7960D0A1D494D1600A25F71 /* SelectedLegendItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedLegendItems.m; sourceTree = "<group>"; };
 		F7960D101D5920B900A25F71 /* HTTP_POSTRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTP_POSTRequestOperation.h; sourceTree = "<group>"; };
 		F7960D111D5920B900A25F71 /* HTTP_POSTRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTP_POSTRequestOperation.m; sourceTree = "<group>"; };
+		F7960D151D5929BF00A25F71 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		F7960D161D5929BF00A25F71 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		F7960D191D592A9200A25F71 /* UserAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAPI.h; sourceTree = "<group>"; };
+		F7960D1A1D592A9200A25F71 /* UserAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAPI.m; sourceTree = "<group>"; };
+		F7960D1D1D592EC700A25F71 /* KeychainAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainAPI.h; sourceTree = "<group>"; };
+		F7960D1E1D592EC700A25F71 /* KeychainAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainAPI.m; sourceTree = "<group>"; };
 		F7C87C9F1D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+GenerateBackgroundQueue.h"; sourceTree = "<group>"; };
 		F7C87CA01D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+GenerateBackgroundQueue.m"; sourceTree = "<group>"; };
 		F7C87CA21D2D998300EE3B45 /* HTTP_GETRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTP_GETRequestOperation.h; sourceTree = "<group>"; };
@@ -717,7 +726,8 @@
 				6E0B8DBF1C593B28003C13E0 /* HTTP */,
 				F2A562E71C6A2468000A6686 /* Map API */,
 				6E0B8DB81C593A9C003C13E0 /* Feed API */,
-				F2152F1D1CDE53D800F1EC88 /* User Defaults API */,
+				F7960D1C1D592AF100A25F71 /* User API */,
+				F7960D201D592ED400A25F71 /* Keychain */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -777,14 +787,14 @@
 			name = "Custom Categories";
 			sourceTree = "<group>";
 		};
-		F2152F1D1CDE53D800F1EC88 /* User Defaults API */ = {
+		F2152F1D1CDE53D800F1EC88 /* User Defaults */ = {
 			isa = PBXGroup;
 			children = (
 				F2152F1C1CDE536500F1EC88 /* BaseUserDefaultsConstants.h */,
 				F2152F191CDAB82400F1EC88 /* NSUserDefaultsAPI.h */,
 				F2152F1A1CDAB82400F1EC88 /* NSUserDefaultsAPI.m */,
 			);
-			name = "User Defaults API";
+			name = "User Defaults";
 			sourceTree = "<group>";
 		};
 		F21531D81CC916EA00AB3A3B /* FAQ */ = {
@@ -975,6 +985,35 @@
 			name = POST;
 			sourceTree = "<group>";
 		};
+		F7960D181D5929C500A25F71 /* Keychain Item Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				F7960D151D5929BF00A25F71 /* KeychainItemWrapper.h */,
+				F7960D161D5929BF00A25F71 /* KeychainItemWrapper.m */,
+			);
+			name = "Keychain Item Wrapper";
+			sourceTree = "<group>";
+		};
+		F7960D1C1D592AF100A25F71 /* User API */ = {
+			isa = PBXGroup;
+			children = (
+				F7960D191D592A9200A25F71 /* UserAPI.h */,
+				F7960D1A1D592A9200A25F71 /* UserAPI.m */,
+				F2152F1D1CDE53D800F1EC88 /* User Defaults */,
+			);
+			name = "User API";
+			sourceTree = "<group>";
+		};
+		F7960D201D592ED400A25F71 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				F7960D1D1D592EC700A25F71 /* KeychainAPI.h */,
+				F7960D1E1D592EC700A25F71 /* KeychainAPI.m */,
+				F7960D181D5929C500A25F71 /* Keychain Item Wrapper */,
+			);
+			name = Keychain;
+			sourceTree = "<group>";
+		};
 		F7C87CA51D2D9C0A00EE3B45 /* HTTP Operation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1150,6 +1189,7 @@
 				6E0B8D7E1C58166D003C13E0 /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				F2A562FD1C6A2496000A6686 /* M_LandingZoneModel+M_LandingZoneModelTableRepresentation.m in Sources */,
 				F2152F0D1CDAAFC100F1EC88 /* CGGeometry+RSKImageCropper.m in Sources */,
+				F7960D171D5929BF00A25F71 /* KeychainItemWrapper.m in Sources */,
 				F2152F1B1CDAB82400F1EC88 /* NSUserDefaultsAPI.m in Sources */,
 				6E0B8D6A1C58166D003C13E0 /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
 				6E0B8D731C58166D003C13E0 /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */,
@@ -1157,6 +1197,7 @@
 				F2152F0F1CDAAFC100F1EC88 /* RSKImageScrollView.m in Sources */,
 				F2A562E61C6A2461000A6686 /* MapPersistencyManager.m in Sources */,
 				6E0B8CCA1C57F9C6003C13E0 /* LMDropdownView.m in Sources */,
+				F7960D1F1D592EC700A25F71 /* KeychainAPI.m in Sources */,
 				F21531EF1CC9419900AB3A3B /* CreateBaseViewController.m in Sources */,
 				6E0B8D831C58166D003C13E0 /* DGActivityIndicatorView.m in Sources */,
 				6E0B8D801C58166D003C13E0 /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,
@@ -1203,6 +1244,7 @@
 				6E0B8DB21C593684003C13E0 /* TextPostModel.m in Sources */,
 				6E0B8C5E1C52C35F003C13E0 /* main.m in Sources */,
 				F2A563001C6A2496000A6686 /* M_POIModel.m in Sources */,
+				F7960D1B1D592A9200A25F71 /* UserAPI.m in Sources */,
 				F2152EFC1CD7ACCA00F1EC88 /* MapListTableViewController.m in Sources */,
 				6E0B8D7B1C58166D003C13E0 /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */,
 				F21531F41CC947CB00AB3A3B /* UITextField+EmailValidation.m in Sources */,

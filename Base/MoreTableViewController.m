@@ -8,6 +8,9 @@
 
 #import "MoreTableViewController.h"
 
+// For logging out user
+#import "UserAPI.h"
+
 @interface MoreTableViewController ()
 
 @end
@@ -82,6 +85,17 @@ NSDictionary *optionsDict;
             // Log out of the application here;
             
             [self performSegueWithIdentifier:@"LogoutSegue" sender:self];
+            
+            UserAPI *userAPI = [UserAPI sharedInstance];
+            [userAPI logoutUserWithCompletionBlock:^(BOOL success, NSError *error) {
+                if (success) {
+                    [self performSegueWithIdentifier:@"LogoutUser" sender:self];
+                }
+                
+                else {
+                    // display error
+                }
+            }];
         }];
         
         UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -92,7 +106,7 @@ NSDictionary *optionsDict;
         [alertController addAction:logOutAction];
         [alertController addAction:defaultAction];
         
-        [self presentViewController:alertController animated:YES completion:nil];
+        
     }
     
     else if ([cell.textLabel.text isEqualToString:@"Donate to the Developers"]) {

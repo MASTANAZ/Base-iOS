@@ -58,6 +58,8 @@ typedef void (^CompleteKeysForDefaults)(BOOL success, NSArray *keys, NSError *er
 
 /**
  Manually synchronize defaults.
+ 
+ @deprecated This method is deprecated as defaults are automatically synced in iOS now.
  **/
 - (void)syncDefaultsWithCompletionBlock:(void (^)(BOOL success, NSError *error))completionBlock; // Deprecated, not necessary
 
@@ -117,5 +119,9 @@ typedef void (^CompleteKeysForDefaults)(BOOL success, NSArray *keys, NSError *er
 - (UIImage*)retrieveProfileImageFromDefaults;
 
 
+/**
+ Remove all User Defaults key-value pairs; only to be used when logging out or clearing application cache.
+ **/
+- (void)removeAllUserDefaults;
 
 @end
