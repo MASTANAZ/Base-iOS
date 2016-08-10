@@ -66,30 +66,42 @@ NSDictionary *optionsDict;
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    // FAQ
+#pragma mark FAQ
+    
     if ([cell.textLabel.text isEqualToString:@"FAQ"]) {
         [self performSegueWithIdentifier:@"FAQsegue" sender:self];
     }
+    
+#pragma mark Account Settings
     
     else if ([cell.textLabel.text isEqualToString:@"Account Settings"]) {
         [self performSegueWithIdentifier:@"AccountSettingsSegue" sender:self];
     }
     
+#pragma mark Notification Settings
+    
     else if ([cell.textLabel.text isEqualToString:@"Notification Settings"]) {
         [self performSegueWithIdentifier:@"NotificationSettingsSegue" sender:self];
     }
     
+#pragma mark Log Out
+    
     else if ([cell.textLabel.text isEqualToString:@"Log Out"]) {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Log Out" message:@"Once you log out, the application will not automatically sign you in  until you reenter your credentials." preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *logOutAction = [UIAlertAction actionWithTitle:@"Log Out" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Log Out"
+                                                                                 message:@"Once you log out, the application will not automatically sign you in  until you reenter your credentials."
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *logOutAction = [UIAlertAction actionWithTitle:@"Log Out"
+                                                               style:UIAlertActionStyleDestructive
+                                                             handler:^(UIAlertAction * _Nonnull action)
+        {
             // Log out of the application here;
-            
-            [self performSegueWithIdentifier:@"LogoutSegue" sender:self];
             
             UserAPI *userAPI = [UserAPI sharedInstance];
             [userAPI logoutUserWithCompletionBlock:^(BOOL success, NSError *error) {
                 if (success) {
-                    [self performSegueWithIdentifier:@"LogoutUser" sender:self];
+                    [self performSegueWithIdentifier:@"LogoutSegue" sender:self];
                 }
                 
                 else {
@@ -106,8 +118,10 @@ NSDictionary *optionsDict;
         [alertController addAction:logOutAction];
         [alertController addAction:defaultAction];
         
-        
+        [self presentViewController:alertController animated:YES completion:nil];
     }
+    
+#pragma mark Donate to Developer
     
     else if ([cell.textLabel.text isEqualToString:@"Donate to the Developers"]) {
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Continue to Safari?" message:@"To donate, you will be taken to Base's dontation site in the Safari application on your phone. Would you like to continue to Safari?" preferredStyle:UIAlertControllerStyleAlert];

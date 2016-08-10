@@ -710,24 +710,24 @@
 			name = "Feed API";
 			sourceTree = "<group>";
 		};
-		6E0B8DBF1C593B28003C13E0 /* HTTP */ = {
+		6E0B8DBF1C593B28003C13E0 /* HTTP API */ = {
 			isa = PBXGroup;
 			children = (
 				6E0B8DBC1C593B22003C13E0 /* HTTPClient.h */,
 				6E0B8DBD1C593B22003C13E0 /* HTTPClient.m */,
 				F7C87CA51D2D9C0A00EE3B45 /* HTTP Operation */,
 			);
-			name = HTTP;
+			name = "HTTP API";
 			sourceTree = "<group>";
 		};
 		6E0B8DC01C593B41003C13E0 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				6E0B8DBF1C593B28003C13E0 /* HTTP */,
+				6E0B8DBF1C593B28003C13E0 /* HTTP API */,
 				F2A562E71C6A2468000A6686 /* Map API */,
 				6E0B8DB81C593A9C003C13E0 /* Feed API */,
 				F7960D1C1D592AF100A25F71 /* User API */,
-				F7960D201D592ED400A25F71 /* Keychain */,
+				F7960D201D592ED400A25F71 /* Keychain API */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -1004,14 +1004,14 @@
 			name = "User API";
 			sourceTree = "<group>";
 		};
-		F7960D201D592ED400A25F71 /* Keychain */ = {
+		F7960D201D592ED400A25F71 /* Keychain API */ = {
 			isa = PBXGroup;
 			children = (
 				F7960D1D1D592EC700A25F71 /* KeychainAPI.h */,
 				F7960D1E1D592EC700A25F71 /* KeychainAPI.m */,
 				F7960D181D5929C500A25F71 /* Keychain Item Wrapper */,
 			);
-			name = Keychain;
+			name = "Keychain API";
 			sourceTree = "<group>";
 		};
 		F7C87CA51D2D9C0A00EE3B45 /* HTTP Operation */ = {
