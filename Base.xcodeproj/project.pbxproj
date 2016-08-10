@@ -116,6 +116,8 @@
 		F7960D171D5929BF00A25F71 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D161D5929BF00A25F71 /* KeychainItemWrapper.m */; };
 		F7960D1B1D592A9200A25F71 /* UserAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D1A1D592A9200A25F71 /* UserAPI.m */; };
 		F7960D1F1D592EC700A25F71 /* KeychainAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D1E1D592EC700A25F71 /* KeychainAPI.m */; };
+		F7960D231D5BB0B900A25F71 /* ApparatusTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D221D5BB0B900A25F71 /* ApparatusTableViewController.m */; };
+		F7960D271D5BB41A00A25F71 /* ApparatusOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D261D5BB41A00A25F71 /* ApparatusOptionsTableViewController.m */; };
 		F7C87CA11D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C87CA01D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m */; };
 		F7C87CA41D2D998300EE3B45 /* HTTP_GETRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C87CA31D2D998300EE3B45 /* HTTP_GETRequestOperation.m */; };
 /* End PBXBuildFile section */
@@ -348,6 +350,10 @@
 		F7960D1A1D592A9200A25F71 /* UserAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAPI.m; sourceTree = "<group>"; };
 		F7960D1D1D592EC700A25F71 /* KeychainAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainAPI.h; sourceTree = "<group>"; };
 		F7960D1E1D592EC700A25F71 /* KeychainAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainAPI.m; sourceTree = "<group>"; };
+		F7960D211D5BB0B900A25F71 /* ApparatusTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApparatusTableViewController.h; sourceTree = "<group>"; };
+		F7960D221D5BB0B900A25F71 /* ApparatusTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApparatusTableViewController.m; sourceTree = "<group>"; };
+		F7960D251D5BB41A00A25F71 /* ApparatusOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApparatusOptionsTableViewController.h; sourceTree = "<group>"; };
+		F7960D261D5BB41A00A25F71 /* ApparatusOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApparatusOptionsTableViewController.m; sourceTree = "<group>"; };
 		F7C87C9F1D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+GenerateBackgroundQueue.h"; sourceTree = "<group>"; };
 		F7C87CA01D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+GenerateBackgroundQueue.m"; sourceTree = "<group>"; };
 		F7C87CA21D2D998300EE3B45 /* HTTP_GETRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTP_GETRequestOperation.h; sourceTree = "<group>"; };
@@ -853,6 +859,7 @@
 				6E0B8D841C583228003C13E0 /* Login */,
 				6E0B8C921C52C5E8003C13E0 /* Feed */,
 				6E0B8C931C52C5F5003C13E0 /* Map */,
+				F7960D241D5BB0BF00A25F71 /* Apparatuses */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -1012,6 +1019,17 @@
 				F7960D181D5929C500A25F71 /* Keychain Item Wrapper */,
 			);
 			name = "Keychain API";
+			sourceTree = "<group>";
+		};
+		F7960D241D5BB0BF00A25F71 /* Apparatuses */ = {
+			isa = PBXGroup;
+			children = (
+				F7960D211D5BB0B900A25F71 /* ApparatusTableViewController.h */,
+				F7960D221D5BB0B900A25F71 /* ApparatusTableViewController.m */,
+				F7960D251D5BB41A00A25F71 /* ApparatusOptionsTableViewController.h */,
+				F7960D261D5BB41A00A25F71 /* ApparatusOptionsTableViewController.m */,
+			);
+			name = Apparatuses;
 			sourceTree = "<group>";
 		};
 		F7C87CA51D2D9C0A00EE3B45 /* HTTP Operation */ = {
@@ -1209,6 +1227,7 @@
 				F2A562FC1C6A2496000A6686 /* M_LandingZoneModel.m in Sources */,
 				6E0B8C611C52C35F003C13E0 /* AppDelegate.m in Sources */,
 				F21531DB1CC92B3900AB3A3B /* NotificationSettingsTableViewController.m in Sources */,
+				F7960D271D5BB41A00A25F71 /* ApparatusOptionsTableViewController.m in Sources */,
 				F2D18F8A1C6C3DFF007206B9 /* BaseMapAnnotation.m in Sources */,
 				6E0B8D711C58166D003C13E0 /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				F2152F111CDAAFC100F1EC88 /* RSKTouchView.m in Sources */,
@@ -1267,6 +1286,7 @@
 				6E0B8D691C58166D003C13E0 /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
 				F21531DF1CC92B6500AB3A3B /* AccountSettingsViewController.m in Sources */,
 				F7C87CA11D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m in Sources */,
+				F7960D231D5BB0B900A25F71 /* ApparatusTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
