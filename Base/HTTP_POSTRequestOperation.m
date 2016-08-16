@@ -10,6 +10,9 @@
 
 @implementation HTTP_POSTRequestOperation
 
+NSString *currentURL;
+NSString *currentBody;
+
 - (id)init {
     
     self = [super init];
@@ -36,10 +39,13 @@
 #pragma mark - NSOperation Methods
 
 - (void)main {
+    
+    [super main];
+    
     @try {
         // Do the main work of the operation here
         
-        [self completePOSTRequest];
+        [self completePOSTRequestWithURL:currentURL];
     }
     
     @catch (NSException *exception) {
@@ -47,7 +53,13 @@
     }
 }
 
-- (void)start {
+- (void)startWithURL:(NSString*)url andBody:(NSString *)body {
+    
+    currentURL = url;
+    currentBody = body;
+    
+    [super start];
+    
     // Always check for cancellation before launching the task.
     if ([self isCancelled]) {
         // Must move operation to the finished state if it is cancelled
@@ -66,14 +78,14 @@
 
 #pragma mark - Custom Methods
 
-- (void)completePOSTRequest {
+- (void)completePOSTRequestWithURL:(NSString *)url {
     NSLog(@"Completing GET Request!");
     
     //    [self willChangeValueForKey:@"isFinished"];
     //    [self willChangeValueForKey:@"isExecuting"];
     
     // 1) Create URL
-    NSURL *serverURL = [NSURL URLWithString:@"http://jsonplaceholder.typicode.com/posts/1"];    // serverAddress];
+    NSURL *serverURL = [NSURL URLWithString:url];    // serverAddress];
     
     // 2) Create background Queue to perform actions in.
     NSOperationQueue *getRequestQueue = [NSOperationQueue createBackgroundQueueForRequests];
@@ -89,7 +101,7 @@
     
     [getRequestQueue addOperationWithBlock:^{
         
-        [getRequestSession dataTaskWithRequest:[NSURLRequest requestWithURL:serverURL]
+     NSURLSessionDataTask *task = [getRequestSession dataTaskWithRequest:[NSURLRequest requestWithURL:serverURL]
                              completionHandler:^(NSData * _Nullable data,
                                                  NSURLResponse * _Nullable response,
                                                  NSError * _Nullable error)
@@ -101,7 +113,7 @@
                  if (self.delegate && [self.delegate respondsToSelector:@selector(receivedDataFromPOSTresponse:withErrors:)])
                  {
                      [self.delegate receivedDataFromPOSTresponse:data
-                                                     withErrors:@[[NSError errorWithDomain:@"HTTPGetRequestError"
+                                                     withErrors:@[[NSError errorWithDomain:@"HTTPPostRequestError"
                                                                                       code: error.code
                                                                                   userInfo:@{NSLocalizedDescriptionKey:error.description,
                                                                                              NSLocalizedRecoverySuggestionErrorKey:error.localizedRecoverySuggestion,
@@ -123,18 +135,25 @@
                  
                  dispatch_group_leave(getRequestGroup);
              }
-             
-             
-             dispatch_group_notify(getRequestGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                 [self willChangeValueForKey:@"isFinished"];
-                 [self willChangeValueForKey:@"isExecuting"];
-                 
-                 executing = NO;
-                 finished = YES;
-             });
+
              //             executing = NO;
              //             finished = YES;
          }];
+        
+        [task resume];
+        
+        dispatch_group_notify(getRequestGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            [self willChangeValueForKey:@"isFinished"];
+            [self willChangeValueForKey:@"isExecuting"];
+            
+            executing = NO;
+            finished = YES;
+            
+            [self didChangeValueForKey:@"isExecuting"];
+            [self didChangeValueForKey:@"isFinished"];
+        });
+        
+        
     }];
     
     

@@ -44,8 +44,8 @@
 - (NSArray*)getMapObjects {
     
     // Interface with the HTTP client here.
-    
-    [HTTPClient performGETrequestWithURL:@"url with parameter for current posts"
+    HTTPClient *client = [HTTPClient sharedInstance];
+    [client performGETrequestWithURL:@"url with parameter for current posts"
                          completionBlock:^(BOOL success, NSData *responseData, NSError *error)
      {
          // decrypt the data

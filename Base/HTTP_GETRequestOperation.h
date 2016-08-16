@@ -7,9 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HTTPClient.h"
+
 
 @protocol HTTP_GETRequestOperationDelegate;
+
+/**
+ HTTP_GETRequestOperationDelegate
+ **/
+@protocol HTTP_GETRequestOperationDelegate <NSObject>
+
+@required
+- (void)receivedDataFromGETresponse:(NSData*)data
+                         withErrors:(NSArray*)arrayOfErrors;
+
+@end
+
+
+#import "HTTPClient.h"
+
 
 @interface HTTP_GETRequestOperation : NSOperation {
     BOOL executing;
@@ -19,7 +34,12 @@
 /**
  The function that is called within the operation to complete the request.
  **/
-- (void)completeGETRequest;
+- (void)completeGETRequestWithURL:(NSString*)url;
+
+/**
+ Custom start method that begins operation with specified URL
+ **/
+- (void)startWithURL:(NSString*)url;
 
 /**
  The HTTP GET request delegate
@@ -30,13 +50,3 @@
 
 
 
-/** 
- HTTP_GETRequestOperationDelegate
- **/
- @protocol HTTP_GETRequestOperationDelegate <NSObject>
-
-@required
-- (void)receivedDataFromGETresponse:(NSData*)data
-                         withErrors:(NSArray*)arrayOfErrors;
-
-@end

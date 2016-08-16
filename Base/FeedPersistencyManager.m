@@ -47,8 +47,8 @@
 - (NSArray*)getPosts {
     
     // Interface with the HTTP client here.
-    
-    [HTTPClient performGETrequestWithURL:@"url with parameter for current posts"
+    HTTPClient *client = [HTTPClient sharedInstance];
+    [client performGETrequestWithURL:@"url with parameter for current posts"
                          completionBlock:^(BOOL success, NSData *responseData, NSError *error)
     {
         // decrypt the data
@@ -65,8 +65,8 @@
 - (NSArray*)getPostsForNextDateRange {
     
     // Interface with the HTTP client here.
-    
-    [HTTPClient performGETrequestWithURL:@"url with parameter for posts in specified date range"
+    HTTPClient *client = [HTTPClient sharedInstance];
+    [client performGETrequestWithURL:@"url with parameter for posts in specified date range"
                          completionBlock:^(BOOL success, NSData *responseData, NSError *error)
      {
          // Do something with the returned data

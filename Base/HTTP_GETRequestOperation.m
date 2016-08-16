@@ -10,6 +10,9 @@
 
 @implementation HTTP_GETRequestOperation
 
+NSString *currentURL;
+
+
 - (id)init {
     self = [super init];
     if (self) {
@@ -35,11 +38,14 @@
 #pragma mark - NSOperation Methods
 
 - (void)main {
+    
+    [super main];
+    
     @try {
         // Do main work of the operation here
         
         // Complete the GET request
-        [self completeGETRequest];
+        [self completeGETRequestWithURL:currentURL];
     }
     
     @catch(NSException *exception) {
@@ -47,7 +53,11 @@
     }
 }
 
-- (void)start {
+
+- (void)startWithURL:(NSString*)url {
+    currentURL = url;    
+    
+    
     // Always check for cancellation before launching the task.
     if ([self isCancelled])
     {
@@ -68,14 +78,14 @@
 
 #pragma mark - Custom Methods
 
-- (void)completeGETRequest {
+- (void)completeGETRequestWithURL:(NSString*)url {
     NSLog(@"Completing GET Request!");
     
 //    [self willChangeValueForKey:@"isFinished"];
 //    [self willChangeValueForKey:@"isExecuting"];
     
     // 1) Create URL
-    NSURL *serverURL = [NSURL URLWithString:@"http://jsonplaceholder.typicode.com/posts/1"];    // serverAddress];
+    NSURL *serverURL = [NSURL URLWithString:url];    // serverAddress];
     
     // 2) Create background Queue to perform actions in.
     NSOperationQueue *getRequestQueue = [NSOperationQueue createBackgroundQueueForRequests];
@@ -91,7 +101,7 @@
     
     [getRequestQueue addOperationWithBlock:^{
     
-        [getRequestSession dataTaskWithRequest:[NSURLRequest requestWithURL:serverURL]
+        NSURLSessionDataTask *task = [getRequestSession dataTaskWithRequest:[NSURLRequest requestWithURL:serverURL]
                              completionHandler:^(NSData * _Nullable data,
                                                  NSURLResponse * _Nullable response,
                                                  NSError * _Nullable error)
@@ -116,6 +126,10 @@
              
              // No errors executing the request
              else {
+                 
+                 NSLog(@"DATAA: %@", data);
+                 NSLog(@"RESPONSE: %@", response);
+                 
                  // Return Data here,
                  if (self.delegate && [self.delegate respondsToSelector:@selector(receivedDataFromGETresponse:withErrors:)])
                  {
@@ -127,21 +141,30 @@
              }
              
              
-            dispatch_group_notify(getRequestGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                [self willChangeValueForKey:@"isFinished"];
-                [self willChangeValueForKey:@"isExecuting"];
-                
-                executing = NO;
-                finished = YES;
-            });
+
 //             executing = NO;
 //             finished = YES;
          }];
+        
+        [task resume];
+        
+        dispatch_group_notify(getRequestGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            [self willChangeValueForKey:@"isFinished"];
+            [self willChangeValueForKey:@"isExecuting"];
+            
+            executing = NO;
+            finished = YES;
+            
+            [self didChangeValueForKey:@"isExecuting"];
+            [self didChangeValueForKey:@"isFinished"];
+        });
+        
+        
     }];
 
 
-    [self didChangeValueForKey:@"isExecuting"];
-    [self didChangeValueForKey:@"isFinished"];
+//    [self didChangeValueForKey:@"isExecuting"];
+//    [self didChangeValueForKey:@"isFinished"];
 }
 
 

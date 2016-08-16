@@ -19,10 +19,11 @@
 #import "HTTP_GETRequestOperation.h"
 
 // Protocol for HTTP_GETRequestOperation delegate methods
-@protocol HTTP_GETRequestOperationDelegate;
+
 
 typedef void (^CompleteGETRequest)(BOOL success, NSData *responseData, NSError *error);
 typedef void (^CompletePOSTRequest)(BOOL success, NSData *responseData, NSError *error);
+
 
 @interface HTTPClient : NSObject <HTTP_GETRequestOperationDelegate>
 
@@ -30,12 +31,13 @@ typedef void (^CompletePOSTRequest)(BOOL success, NSData *responseData, NSError 
 @property (copy, nonatomic) CompleteGETRequest completeGetRequest;
 @property (copy, nonatomic) CompletePOSTRequest completePostRequest;
 
-+ (void)performGETrequestWithURL:(NSString*)urlString
+- (void)performGETrequestWithURL:(NSString*)urlString
                completionBlock:(void (^)(BOOL, NSData *, NSError *))completionBlock; // CompleteGetRequest
 
-+ (void)performPOSTrequestWithURL:(NSString*)urlString body:(NSString*)body
+- (void)performPOSTrequestWithURL:(NSString*)urlString body:(NSString*)body
                 completionBlock:(void (^)(BOOL, NSData *, NSError *))completionBlock; // CompletePostRequest
 
++ (HTTPClient*)sharedInstance;
 
 /**
  Download an image from a specfied URL that directly links to an image.

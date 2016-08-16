@@ -19,7 +19,7 @@
 /**
  The function that is called within the operation to complete the POST request.
  **/
-- (void)completePOSTRequest;
+- (void)completePOSTRequestWithURL:(NSString *)url;
 
 @property (nonatomic, weak) id<HTTP_POSTRequestOperationDelegate> delegate;
 
