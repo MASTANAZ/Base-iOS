@@ -11,6 +11,17 @@
 
 @protocol HTTP_POSTRequestOperationDelegate;
 
+/**
+ HTTP_POSTRequestOperationDelegate
+ **/
+@protocol HTTP_POSTRequestOperationDelegate <NSObject>
+
+@required
+- (void)receivedDataFromPOSTresponse:(NSData*)data
+                          withErrors:(NSArray*)arrayOfErrors;
+
+@end
+
 @interface HTTP_POSTRequestOperation : NSOperation {
     BOOL executing;
     BOOL finished;
@@ -26,13 +37,4 @@
 @end
 
 
-/**
- HTTP_POSTRequestOperationDelegate
- **/
-@protocol HTTP_POSTRequestOperationDelegate <NSObject>
 
-@required
-- (void)receivedDataFromPOSTresponse:(NSData*)data
-                          withErrors:(NSArray*)arrayOfErrors;
-
-@end

@@ -10,7 +10,7 @@
 
 @implementation HTTP_GETRequestOperation
 
-NSString *currentURL;
+NSString *currentGETURL;
 
 
 - (id)init {
@@ -45,7 +45,7 @@ NSString *currentURL;
         // Do main work of the operation here
         
         // Complete the GET request
-        [self completeGETRequestWithURL:currentURL];
+        [self completeGETRequestWithURL:currentGETURL];
     }
     
     @catch(NSException *exception) {
@@ -55,7 +55,7 @@ NSString *currentURL;
 
 
 - (void)startWithURL:(NSString*)url {
-    currentURL = url;    
+    currentGETURL = url;
     
     
     // Always check for cancellation before launching the task.

@@ -10,8 +10,8 @@
 
 @implementation HTTP_POSTRequestOperation
 
-NSString *currentURL;
-NSString *currentBody;
+NSString *currentPOSTURL;
+NSString *currentPOSTBody;
 
 - (id)init {
     
@@ -45,7 +45,7 @@ NSString *currentBody;
     @try {
         // Do the main work of the operation here
         
-        [self completePOSTRequestWithURL:currentURL];
+        [self completePOSTRequestWithURL:currentPOSTURL];
     }
     
     @catch (NSException *exception) {
@@ -55,8 +55,8 @@ NSString *currentBody;
 
 - (void)startWithURL:(NSString*)url andBody:(NSString *)body {
     
-    currentURL = url;
-    currentBody = body;
+    currentPOSTURL = url;
+    currentPOSTBody = body;
     
     [super start];
     
