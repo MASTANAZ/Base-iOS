@@ -9,6 +9,8 @@
 #import "ApparatusTableViewController.h"
 #import "ApparatusOptionsTableViewController.h"
 
+#import "MGSwipeTableCell.h"
+
 @interface ApparatusTableViewController ()
 
 @end
@@ -20,12 +22,18 @@ static NSArray *apparatusArray;
 
 NSString *selectedApparatus;
 
+
+// Test Data
+BOOL inService;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    inService = YES;
+    
     // Temporary Data
     
-    apparatusArray = @[@{@"Title":@"Engine 40", @"Body":@"In Service"},
+    apparatusArray = @[@{@"Title":@"Engine 40", @"Body":@"Out of Service"},
                        @{@"Title":@"Squad 4", @"Body":@"In Service"},
                        @{@"Title":@"Brush 46", @"Body":@"In Service"},
                        @{@"Title":@"Tender 44", @"Body":@"In Service"},
@@ -35,7 +43,7 @@ NSString *selectedApparatus;
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,8 +63,39 @@ NSString *selectedApparatus;
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ApparatusCell" forIndexPath:indexPath];
+    MGSwipeTableCell *cell = (MGSwipeTableCell*)[tableView dequeueReusableCellWithIdentifier:@"ApparatusCell" forIndexPath:indexPath];
     
+    
+    /// TEST DATA FOR VISUALIZATION
+    //TODO: Add functionality to update server with in/out of service information
+    //      When server is updated, send push notification to users.
+    if (indexPath.row % 2) {
+        cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"Take out of Service"
+                                             backgroundColor:[UIColor colorWithRed:255.0/255 green:70.7/255 blue:76.5/255 alpha:1.0]
+                                                    callback:^BOOL(MGSwipeTableCell *sender)
+                               {
+                                   NSLog(@"Take out");
+                                   inService = NO;
+                                   cell.detailTextLabel.text = @"Out of Service";
+                                   
+
+                                   return YES;
+                               }]];
+    }
+    
+    else {
+        cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"Put in Service"
+                                             backgroundColor:[UIColor colorWithRed:0.197 green:0.824 blue:0.295 alpha:1.0]
+                                                    callback:^BOOL(MGSwipeTableCell *sender)
+                               {
+                                   NSLog(@"Put in");
+                                   cell.detailTextLabel.text = @"In Service";
+                                   inService = YES;
+                                   
+                                   
+                                   return YES;
+                               }]];
+    }
 
     cell.textLabel.text = [[apparatusArray objectAtIndex:indexPath.row] objectForKey:@"Title"];
     cell.detailTextLabel.text = [[apparatusArray objectAtIndex:indexPath.row] objectForKey:@"Body"];

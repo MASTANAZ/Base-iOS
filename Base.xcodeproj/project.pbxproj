@@ -118,6 +118,8 @@
 		F7960D1F1D592EC700A25F71 /* KeychainAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D1E1D592EC700A25F71 /* KeychainAPI.m */; };
 		F7960D231D5BB0B900A25F71 /* ApparatusTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D221D5BB0B900A25F71 /* ApparatusTableViewController.m */; };
 		F7960D271D5BB41A00A25F71 /* ApparatusOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D261D5BB41A00A25F71 /* ApparatusOptionsTableViewController.m */; };
+		F7960D4A1D5F8FF700A25F71 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D471D5F8FF700A25F71 /* MGSwipeButton.m */; };
+		F7960D4B1D5F8FF700A25F71 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D491D5F8FF700A25F71 /* MGSwipeTableCell.m */; };
 		F7C87CA11D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C87CA01D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m */; };
 		F7C87CA41D2D998300EE3B45 /* HTTP_GETRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C87CA31D2D998300EE3B45 /* HTTP_GETRequestOperation.m */; };
 /* End PBXBuildFile section */
@@ -354,6 +356,10 @@
 		F7960D221D5BB0B900A25F71 /* ApparatusTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApparatusTableViewController.m; sourceTree = "<group>"; };
 		F7960D251D5BB41A00A25F71 /* ApparatusOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApparatusOptionsTableViewController.h; sourceTree = "<group>"; };
 		F7960D261D5BB41A00A25F71 /* ApparatusOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApparatusOptionsTableViewController.m; sourceTree = "<group>"; };
+		F7960D461D5F8FF700A25F71 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		F7960D471D5F8FF700A25F71 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		F7960D481D5F8FF700A25F71 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		F7960D491D5F8FF700A25F71 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
 		F7C87C9F1D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+GenerateBackgroundQueue.h"; sourceTree = "<group>"; };
 		F7C87CA01D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+GenerateBackgroundQueue.m"; sourceTree = "<group>"; };
 		F7C87CA21D2D998300EE3B45 /* HTTP_GETRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTP_GETRequestOperation.h; sourceTree = "<group>"; };
@@ -1024,6 +1030,10 @@
 		F7960D241D5BB0BF00A25F71 /* Apparatuses */ = {
 			isa = PBXGroup;
 			children = (
+				F7960D461D5F8FF700A25F71 /* MGSwipeButton.h */,
+				F7960D471D5F8FF700A25F71 /* MGSwipeButton.m */,
+				F7960D481D5F8FF700A25F71 /* MGSwipeTableCell.h */,
+				F7960D491D5F8FF700A25F71 /* MGSwipeTableCell.m */,
 				F7960D211D5BB0B900A25F71 /* ApparatusTableViewController.h */,
 				F7960D221D5BB0B900A25F71 /* ApparatusTableViewController.m */,
 				F7960D251D5BB41A00A25F71 /* ApparatusOptionsTableViewController.h */,
@@ -1250,6 +1260,8 @@
 				6E0B8D781C58166D003C13E0 /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
 				6E0B8D741C58166D003C13E0 /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
 				6E0B8D651C58166D003C13E0 /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
+				F7960D4B1D5F8FF700A25F71 /* MGSwipeTableCell.m in Sources */,
+				F7960D4A1D5F8FF700A25F71 /* MGSwipeButton.m in Sources */,
 				6E0B8D6F1C58166D003C13E0 /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
 				F2A563011C6A2496000A6686 /* M_POIModel+M_POIModelTableRepresentation.m in Sources */,
 				6E0B8C641C52C35F003C13E0 /* FirstViewController.m in Sources */,

@@ -1699,7 +1699,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ApparatusCell" textLabel="RHa-Es-ytC" detailTextLabel="GfX-TQ-PLT" rowHeight="70" style="IBUITableViewCellStyleValue1" id="fAu-Kw-mcg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ApparatusCell" textLabel="RHa-Es-ytC" detailTextLabel="GfX-TQ-PLT" rowHeight="70" style="IBUITableViewCellStyleValue1" id="fAu-Kw-mcg" customClass="MGSwipeTableCell">
                                 <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fAu-Kw-mcg" id="j66-mf-Pwo">
