@@ -26,8 +26,7 @@ static NSArray *apparatusOptionsList;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    apparatusOptionsList = @[@{@"Title":@"Edit Apparatus Status", @"Body":@"Put in/out of service."},
-                             @{@"Title":@"Inventory", @"Body":@"View most current apparatus inventory."},
+    apparatusOptionsList = @[@{@"Title":@"Inventory", @"Body":@"View most current apparatus inventory."},
                              @{@"Title":@"Perform Inspections", @"Body":@"Perform general inventory/equipment inspections."},
                              @{@"Title":@"Inspection History", @"Body":@"View past inspections."},
                              @{@"Title":@"Update Fuel Consumption", @"Body":@"Add fuel to apparatus fuel log."},

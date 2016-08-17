@@ -59,8 +59,13 @@
             // Error encountered
             if (!objectsAndKeysExist) {
                 if (self.completeKeychainMethod) {
-#warning Use actual NSError in this completion block.
-                    self.completeKeychainMethod(NO, nil);
+                    
+                    // Set up NSError for Keychain update failure
+                    NSError *keychainError = [[NSError alloc]initWithDomain:@"BaseError" code:-200
+                                                                   userInfo:@{NSLocalizedDescriptionKey:@"Keychain Error: Values not saved to Keychain"}];
+                
+                    
+                    self.completeKeychainMethod(NO, keychainError);
                 }
             }
         }];
