@@ -122,6 +122,11 @@
 		F7960D4B1D5F8FF700A25F71 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7960D491D5F8FF700A25F71 /* MGSwipeTableCell.m */; };
 		F7C87CA11D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C87CA01D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m */; };
 		F7C87CA41D2D998300EE3B45 /* HTTP_GETRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C87CA31D2D998300EE3B45 /* HTTP_GETRequestOperation.m */; };
+		F7D908B61E03796C005BCE99 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D908B51E03796C005BCE99 /* CoreData.framework */; };
+		F7D908BA1E037C0B005BCE99 /* ChecklistModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7D908B81E037C0B005BCE99 /* ChecklistModel.xcdatamodeld */; };
+		F7F3936F1E6613C600B17DF9 /* ApparatusInventoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F3936E1E6613C600B17DF9 /* ApparatusInventoryTableViewController.m */; };
+		F7F393731E66188700B17DF9 /* FuelLogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F393721E66188700B17DF9 /* FuelLogTableViewController.m */; };
+		F7F393761E6618A300B17DF9 /* FuelLogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F393751E6618A300B17DF9 /* FuelLogTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -364,6 +369,14 @@
 		F7C87CA01D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+GenerateBackgroundQueue.m"; sourceTree = "<group>"; };
 		F7C87CA21D2D998300EE3B45 /* HTTP_GETRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTP_GETRequestOperation.h; sourceTree = "<group>"; };
 		F7C87CA31D2D998300EE3B45 /* HTTP_GETRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTP_GETRequestOperation.m; sourceTree = "<group>"; };
+		F7D908B51E03796C005BCE99 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F7D908B91E037C0B005BCE99 /* ChecklistModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChecklistModel.xcdatamodel; sourceTree = "<group>"; };
+		F7F3936D1E6613C600B17DF9 /* ApparatusInventoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApparatusInventoryTableViewController.h; sourceTree = "<group>"; };
+		F7F3936E1E6613C600B17DF9 /* ApparatusInventoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApparatusInventoryTableViewController.m; sourceTree = "<group>"; };
+		F7F393711E66188700B17DF9 /* FuelLogTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuelLogTableViewController.h; sourceTree = "<group>"; };
+		F7F393721E66188700B17DF9 /* FuelLogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuelLogTableViewController.m; sourceTree = "<group>"; };
+		F7F393741E6618A300B17DF9 /* FuelLogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuelLogTableViewCell.h; sourceTree = "<group>"; };
+		F7F393751E6618A300B17DF9 /* FuelLogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuelLogTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,6 +384,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7D908B61E03796C005BCE99 /* CoreData.framework in Frameworks */,
 				6E0B8C9A1C52C929003C13E0 /* CoreLocation.framework in Frameworks */,
 				6E0B8C981C52C922003C13E0 /* MapKit.framework in Frameworks */,
 			);
@@ -421,6 +435,7 @@
 				6E0B8CCC1C57F9D6003C13E0 /* External Libraries */,
 				6E0B8C5F1C52C35F003C13E0 /* AppDelegate.h */,
 				6E0B8C601C52C35F003C13E0 /* AppDelegate.m */,
+				F7D908B71E037973005BCE99 /* Core Data Objects */,
 				6E0B8DC71C594F5A003C13E0 /* View */,
 				6E0B8DC01C593B41003C13E0 /* API */,
 				6E0B8DCB1C5973C2003C13E0 /* Model */,
@@ -865,6 +880,7 @@
 				6E0B8D841C583228003C13E0 /* Login */,
 				6E0B8C921C52C5E8003C13E0 /* Feed */,
 				6E0B8C931C52C5F5003C13E0 /* Map */,
+				F7F393701E66181E00B17DF9 /* Fuel Log */,
 				F7960D241D5BB0BF00A25F71 /* Apparatuses */,
 			);
 			name = "View Controller";
@@ -960,6 +976,7 @@
 		F2D18F941C726DE6007206B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F7D908B51E03796C005BCE99 /* CoreData.framework */,
 				F2152F141CDAAFD200F1EC88 /* RSKImageCropper */,
 				6E0B8C991C52C929003C13E0 /* CoreLocation.framework */,
 				6E0B8C971C52C922003C13E0 /* MapKit.framework */,
@@ -1038,6 +1055,7 @@
 				F7960D221D5BB0B900A25F71 /* ApparatusTableViewController.m */,
 				F7960D251D5BB41A00A25F71 /* ApparatusOptionsTableViewController.h */,
 				F7960D261D5BB41A00A25F71 /* ApparatusOptionsTableViewController.m */,
+				F7F3936C1E6613AD00B17DF9 /* Inventory */,
 			);
 			name = Apparatuses;
 			sourceTree = "<group>";
@@ -1059,6 +1077,34 @@
 				F7C87CA01D2D930200EE3B45 /* NSOperationQueue+GenerateBackgroundQueue.m */,
 			);
 			name = Queue;
+			sourceTree = "<group>";
+		};
+		F7D908B71E037973005BCE99 /* Core Data Objects */ = {
+			isa = PBXGroup;
+			children = (
+				F7D908B81E037C0B005BCE99 /* ChecklistModel.xcdatamodeld */,
+			);
+			name = "Core Data Objects";
+			sourceTree = "<group>";
+		};
+		F7F3936C1E6613AD00B17DF9 /* Inventory */ = {
+			isa = PBXGroup;
+			children = (
+				F7F3936D1E6613C600B17DF9 /* ApparatusInventoryTableViewController.h */,
+				F7F3936E1E6613C600B17DF9 /* ApparatusInventoryTableViewController.m */,
+			);
+			name = Inventory;
+			sourceTree = "<group>";
+		};
+		F7F393701E66181E00B17DF9 /* Fuel Log */ = {
+			isa = PBXGroup;
+			children = (
+				F7F393711E66188700B17DF9 /* FuelLogTableViewController.h */,
+				F7F393721E66188700B17DF9 /* FuelLogTableViewController.m */,
+				F7F393741E6618A300B17DF9 /* FuelLogTableViewCell.h */,
+				F7F393751E6618A300B17DF9 /* FuelLogTableViewCell.m */,
+			);
+			name = "Fuel Log";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1128,6 +1174,7 @@
 				TargetAttributes = {
 					6E0B8C581C52C35F003C13E0 = {
 						CreatedOnToolsVersion = 7.0;
+						ProvisioningStyle = Manual;
 					};
 					6E0B8C741C52C35F003C13E0 = {
 						CreatedOnToolsVersion = 7.0;
@@ -1209,6 +1256,7 @@
 				6E0B8DBB1C593AA9003C13E0 /* FeedAPI.m in Sources */,
 				6E0B8CAD1C56998F003C13E0 /* ExpandedMapTableViewCell.m in Sources */,
 				6E0B8CB01C5699C5003C13E0 /* ExpandedMapTableViewController.m in Sources */,
+				F7F3936F1E6613C600B17DF9 /* ApparatusInventoryTableViewController.m in Sources */,
 				6E0B8D761C58166D003C13E0 /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
 				6E0B8C9D1C52C9CA003C13E0 /* MapTableViewCell.m in Sources */,
 				6E0B8D701C58166D003C13E0 /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */,
@@ -1228,9 +1276,11 @@
 				F7960D1F1D592EC700A25F71 /* KeychainAPI.m in Sources */,
 				F21531EF1CC9419900AB3A3B /* CreateBaseViewController.m in Sources */,
 				6E0B8D831C58166D003C13E0 /* DGActivityIndicatorView.m in Sources */,
+				F7F393761E6618A300B17DF9 /* FuelLogTableViewCell.m in Sources */,
 				6E0B8D801C58166D003C13E0 /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,
 				6E0B8D6D1C58166D003C13E0 /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
 				6E0B8C961C52C60F003C13E0 /* TestPostTableViewCell.m in Sources */,
+				F7D908BA1E037C0B005BCE99 /* ChecklistModel.xcdatamodeld in Sources */,
 				6E0B8D7F1C58166D003C13E0 /* DGActivityIndicatorTriangleSkewSpinAnimation.m in Sources */,
 				6E0B8D821C58166D003C13E0 /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
 				6E0B8C671C52C35F003C13E0 /* SecondViewController.m in Sources */,
@@ -1260,6 +1310,7 @@
 				6E0B8D781C58166D003C13E0 /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
 				6E0B8D741C58166D003C13E0 /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
 				6E0B8D651C58166D003C13E0 /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
+				F7F393731E66188700B17DF9 /* FuelLogTableViewController.m in Sources */,
 				F7960D4B1D5F8FF700A25F71 /* MGSwipeTableCell.m in Sources */,
 				F7960D4A1D5F8FF700A25F71 /* MGSwipeButton.m in Sources */,
 				6E0B8D6F1C58166D003C13E0 /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
@@ -1442,11 +1493,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Base/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kudoko.Base;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1455,11 +1508,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Base/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kudoko.Base;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1551,6 +1606,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F7D908B81E037C0B005BCE99 /* ChecklistModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F7D908B91E037C0B005BCE99 /* ChecklistModel.xcdatamodel */,
+			);
+			currentVersion = F7D908B91E037C0B005BCE99 /* ChecklistModel.xcdatamodel */;
+			path = ChecklistModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6E0B8C511C52C35F003C13E0 /* Project object */;
 }

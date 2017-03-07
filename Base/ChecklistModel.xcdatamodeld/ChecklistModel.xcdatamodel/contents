@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G31" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Apparatus" syncable="YES">
+        <attribute name="in_service" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="last_inspection" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="checklist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Checklist" inverseName="apparatus" inverseEntity="Checklist" syncable="YES"/>
+        <relationship name="inventory" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Inventory" inverseName="apparatus" inverseEntity="Inventory" syncable="YES"/>
+    </entity>
+    <entity name="Checklist" syncable="YES">
+        <attribute name="all_equipment_approved" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="all_extinguisher_approved" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="all_flashlights_approved" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="all_radio_approved" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="all_scba_approved" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cooler_note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coolers_filled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="equipment_note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="extinguisher_note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="extrication_equipement_approved" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="extrication_note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flashlight_note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="most_recent_inspection_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="radio_note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scba_note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tanks_filled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tanks_note" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="apparatus" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Apparatus" inverseName="checklist" inverseEntity="Apparatus" syncable="YES"/>
+        <relationship name="inventory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Inventory" inverseName="checklist" inverseEntity="Inventory" syncable="YES"/>
+    </entity>
+    <entity name="Inventory" syncable="YES">
+        <attribute name="current_water_gallons" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="is_suppression_apparatus" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="max_water_gallons" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="num_of_extinguishers" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="num_of_radios" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="num_of_scbas" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="apparatus" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Apparatus" inverseName="inventory" inverseEntity="Apparatus" syncable="YES"/>
+        <relationship name="checklist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Checklist" inverseName="inventory" inverseEntity="Checklist" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Apparatus" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="Checklist" positionX="-72" positionY="218" width="200" height="328"/>
+        <element name="Inventory" positionX="270" positionY="39" width="171" height="163"/>
+    </elements>
+</model>

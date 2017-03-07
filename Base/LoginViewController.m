@@ -24,7 +24,7 @@ DGActivityIndicatorView *activityView;
     [super viewWillAppear:animated];
     
     // re-hide the transparent nav bar if user swipes back
-    [[self navigationController]setNavigationBarHidden:YES animated:NO];
+    //[[self navigationController]setNavigationBarHidden:YES animated:NO];
 
 }
 
@@ -32,7 +32,7 @@ DGActivityIndicatorView *activityView;
     [super viewDidLoad];
     [_usernameTextField becomeFirstResponder];
     
-    [[self navigationController]setNavigationBarHidden:YES animated:NO];
+   // [[self navigationController]setNavigationBarHidden:YES animated:NO];
 
 
 

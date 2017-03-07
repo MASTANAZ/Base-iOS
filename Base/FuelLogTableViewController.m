@@ -1,37 +1,21 @@
 //
-//  ApparatusOptionsTableViewController.m
+//  FuelLogTableViewController.m
 //  Base
 //
-//  Created by Blake Nazario on 8/10/16.
-//  Copyright © 2016 Kudoko, LLC. All rights reserved.
+//  Created by Blake Nazario on 2/28/17.
+//  Copyright © 2017 Kudoko, LLC. All rights reserved.
 //
 
-#import "ApparatusOptionsTableViewController.h"
-#import "ApparatusInventoryTableViewController.h"
+#import "FuelLogTableViewController.h"
 
-@interface ApparatusOptionsTableViewController ()
+@interface FuelLogTableViewController ()
 
 @end
 
-@implementation ApparatusOptionsTableViewController
-
-// Not Temporary
-static NSArray *apparatusOptionsList;
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    self.navigationItem.title = self.apparatusName;
-}
+@implementation FuelLogTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    apparatusOptionsList = @[@{@"Title":@"Inventory", @"Body":@"View most current apparatus inventory."},
-                             @{@"Title":@"Perform Inspections", @"Body":@"Perform general inventory/equipment inspections."},
-                             @{@"Title":@"Inspection History", @"Body":@"View past inspections."},
-                             @{@"Title":@"Update Fuel Consumption", @"Body":@"Add fuel to apparatus fuel log."},
-                             @{@"Title":@"Call History", @"Body":@"View past calls up to 2 weeks."}];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -48,19 +32,21 @@ static NSArray *apparatusOptionsList;
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return apparatusOptionsList.count;
+    return 1;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OptionsCell" forIndexPath:indexPath];
+    FuelLogTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FuelCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = [[apparatusOptionsList objectAtIndex:indexPath.row] objectForKey:@"Title"];
-    cell.detailTextLabel.text = [[apparatusOptionsList objectAtIndex:indexPath.row] objectForKey:@"Body"];
+    cell.apparatusLabel.text = @"Apparatus";
+    cell.gallonsLabel.text = @"23.4 gal";
+    cell.dateLabel.text = @"MMM dd, YYYY";
     
     return cell;
 }
@@ -100,23 +86,16 @@ static NSArray *apparatusOptionsList;
 }
 */
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-
-    if ([cell.textLabel.text isEqualToString:@"Inventory"]) {
-        [self performSegueWithIdentifier:@"InventorySegue" sender:self];
-    }
-}
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"InventorySegue"]) {
-        ApparatusInventoryTableViewController *inventoryTVC = (ApparatusInventoryTableViewController*)segue.destinationViewController;
-
-    }
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+*/
 
-
+- (IBAction)addLog:(id)sender {
+}
 @end
