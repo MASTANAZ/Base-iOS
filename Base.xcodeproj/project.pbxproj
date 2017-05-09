@@ -750,6 +750,7 @@
 		6E0B8DC01C593B41003C13E0 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				F2B5866F1EC13E530050D426 /* Audio Stream API */,
 				6E0B8DBF1C593B28003C13E0 /* HTTP API */,
 				F2A562E71C6A2468000A6686 /* Map API */,
 				6E0B8DB81C593A9C003C13E0 /* Feed API */,
@@ -962,6 +963,13 @@
 				F2A562F71C6A2496000A6686 /* M_POIModel+M_POIModelTableRepresentation.m */,
 			);
 			name = POI;
+			sourceTree = "<group>";
+		};
+		F2B5866F1EC13E530050D426 /* Audio Stream API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Audio Stream API";
 			sourceTree = "<group>";
 		};
 		F2D18F8F1C7261FC007206B9 /* Feed CallType Images */ = {

@@ -26,6 +26,7 @@
 #import "MapPostModel.h"
 #import "MapPostModel+TableRepresentation.h"
 
+#import <AVFoundation/AVFoundation.h>
 
 
 
@@ -76,6 +77,10 @@ static UIAlertController *addPostAlertController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Testing
+    AVPlayer *objAVPlayer = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:@"http://35.185.121.93/song.mp3"]];
+    [objAVPlayer play];
     
     
     currentPostIndex = 0;
