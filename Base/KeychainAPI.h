@@ -38,6 +38,7 @@ typedef void (^CompleteKeychainMethod)(BOOL success, NSError *error);
  @param key The key for the object-key pair that is to be removed.
  
  @warning `key` must not be `nil`.
+ @warning This method is not implemented yet.
  **/
 - (void)removeObjectFromKeychainForKey:(NSString*)key
                    withCompletionBlock:(void (^)(BOOL success, NSError *error))completionBlock;

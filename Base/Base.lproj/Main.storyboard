@@ -1642,7 +1642,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="waA-Ys-mQb" id="etS-yj-BkI">
-                                    <frame key="frameInset" width="375" height="69"/>
+                                    <frame key="frameInset" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apparatus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nH-Mq-Mlb">
@@ -1680,7 +1680,7 @@
                                 <rect key="frame" x="0.0" y="98" width="375" height="188"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tys-qs-TdY" id="VTO-mC-vxF">
-                                    <frame key="frameInset" width="375" height="187"/>
+                                    <frame key="frameInset" width="375" height="187.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RmD-Eo-0Jt">
@@ -1688,7 +1688,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         </pickerView>
                                         <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTa-28-tkB">
-                                            <frame key="frameInset" minX="194" minY="37" height="150" maxX="8"/>
+                                            <frame key="frameInset" minX="194" minY="37" height="150"/>
                                         </pickerView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Apparatus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGP-SJ-fdK">
                                             <frame key="frameInset" minX="58" minY="8" width="79" height="21"/>
@@ -1841,11 +1841,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YUL-6H-Ra6" id="SnJ-k2-eJw">
-                                    <frame key="frameInset" width="328" height="69"/>
+                                    <frame key="frameInset" width="328" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hs5-sP-b8w">
-                                            <frame key="frameInset" minX="15" width="313" height="69"/>
+                                            <frame key="frameInset" minX="15" width="313" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -1871,7 +1871,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wEl-co-bvi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Fuel Log" image="second" id="rNn-ta-Ie9"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="4I6-oQ-oMv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4I6-oQ-oMv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.2666666667" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1883,7 +1883,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dZ-uA-79E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="244" y="3485"/>
+            <point key="canvasLocation" x="244" y="3484"/>
         </scene>
     </scenes>
     <resources>

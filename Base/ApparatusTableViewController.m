@@ -22,6 +22,8 @@ static NSArray *apparatusArray;
 
 NSString *selectedApparatus;
 
+# Warning Only officers should be able to take an apparatus in/out of service.
+
 
 // Test Data
 BOOL inService;

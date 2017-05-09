@@ -29,6 +29,10 @@
 
 /**
  The function that is called within the operation to complete the POST request.
+ 
+ @param url The URL that the image will be used for the GET operation
+ 
+ @warning `url` must not be `nil`.
  **/
 - (void)completePOSTRequestWithURL:(NSString *)url;
 
