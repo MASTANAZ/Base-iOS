@@ -38,6 +38,10 @@
 
 /**
  Custom start method that begins operation with specified URL
+ 
+ @param url The URL that the image will be used for the GET operation
+ 
+ @warning `url` must not be `nil`.
  **/
 - (void)startWithURL:(NSString*)url;
 

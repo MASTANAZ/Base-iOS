@@ -12,6 +12,11 @@
 
 @end
 
+
+//TODO: If notification toggle is set to True/False, a web service should be called
+//      to update the backend. Or there should be a way to update the physical settings
+//      of the application.
+
 @implementation NotificationSettingsTableViewController
 
 - (void)viewDidLoad {
