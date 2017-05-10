@@ -108,6 +108,7 @@
 		F2A563011C6A2496000A6686 /* M_POIModel+M_POIModelTableRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A562F71C6A2496000A6686 /* M_POIModel+M_POIModelTableRepresentation.m */; };
 		F2A563021C6A2496000A6686 /* MapModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A562F91C6A2496000A6686 /* MapModel.m */; };
 		F2A563091C6A2A40000A6686 /* AnnotationImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2A563081C6A2A40000A6686 /* AnnotationImages.xcassets */; };
+		F2B586721EC140A80050D426 /* PagerStream.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B586711EC140A80050D426 /* PagerStream.m */; };
 		F2D18F8A1C6C3DFF007206B9 /* BaseMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D18F891C6C3DFF007206B9 /* BaseMapAnnotation.m */; };
 		F2D18F8E1C72613D007206B9 /* Base-MapAnnotation-Fire-2 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D18F8D1C72613D007206B9 /* Base-MapAnnotation-Fire-2 copy.png */; };
 		F2D18F931C72635A007206B9 /* Base-MapAnnotation-EmergencyMedical-2 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D18F921C72635A007206B9 /* Base-MapAnnotation-EmergencyMedical-2 copy.png */; };
@@ -343,6 +344,8 @@
 		F2A562F81C6A2496000A6686 /* MapModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapModel.h; sourceTree = "<group>"; };
 		F2A562F91C6A2496000A6686 /* MapModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapModel.m; sourceTree = "<group>"; };
 		F2A563081C6A2A40000A6686 /* AnnotationImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AnnotationImages.xcassets; sourceTree = "<group>"; };
+		F2B586701EC140A80050D426 /* PagerStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagerStream.h; sourceTree = "<group>"; };
+		F2B586711EC140A80050D426 /* PagerStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagerStream.m; sourceTree = "<group>"; };
 		F2D18F881C6C3DFF007206B9 /* BaseMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMapAnnotation.h; sourceTree = SOURCE_ROOT; };
 		F2D18F891C6C3DFF007206B9 /* BaseMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMapAnnotation.m; sourceTree = SOURCE_ROOT; };
 		F2D18F8D1C72613D007206B9 /* Base-MapAnnotation-Fire-2 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Base-MapAnnotation-Fire-2 copy.png"; sourceTree = "<group>"; };
@@ -750,6 +753,7 @@
 		6E0B8DC01C593B41003C13E0 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				F2B5866F1EC13E530050D426 /* Audio Stream API */,
 				6E0B8DBF1C593B28003C13E0 /* HTTP API */,
 				F2A562E71C6A2468000A6686 /* Map API */,
 				6E0B8DB81C593A9C003C13E0 /* Feed API */,
@@ -964,6 +968,15 @@
 			name = POI;
 			sourceTree = "<group>";
 		};
+		F2B5866F1EC13E530050D426 /* Audio Stream API */ = {
+			isa = PBXGroup;
+			children = (
+				F2B586701EC140A80050D426 /* PagerStream.h */,
+				F2B586711EC140A80050D426 /* PagerStream.m */,
+			);
+			name = "Audio Stream API";
+			sourceTree = "<group>";
+		};
 		F2D18F8F1C7261FC007206B9 /* Feed CallType Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1174,7 +1187,7 @@
 				TargetAttributes = {
 					6E0B8C581C52C35F003C13E0 = {
 						CreatedOnToolsVersion = 7.0;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 5P88CTCFZ9;
 					};
 					6E0B8C741C52C35F003C13E0 = {
 						CreatedOnToolsVersion = 7.0;
@@ -1315,6 +1328,7 @@
 				F7960D4A1D5F8FF700A25F71 /* MGSwipeButton.m in Sources */,
 				6E0B8D6F1C58166D003C13E0 /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
 				F2A563011C6A2496000A6686 /* M_POIModel+M_POIModelTableRepresentation.m in Sources */,
+				F2B586721EC140A80050D426 /* PagerStream.m in Sources */,
 				6E0B8C641C52C35F003C13E0 /* FirstViewController.m in Sources */,
 				6E0B8D681C58166D003C13E0 /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
 				F21531D71CC916E400AB3A3B /* FAQTableViewController.m in Sources */,
